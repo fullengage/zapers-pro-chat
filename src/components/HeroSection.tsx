@@ -19,10 +19,10 @@ const HeroSection = () => {
           </div>
           
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mb-8">
-            A EVOLUÇÃO DO WHATSAPP
+            TRANSFORME O WHATSAPP
             <span className="block">
-              <span className="text-yellow-300">NO SEU</span>
-              <span className="text-green-300"> NEGÓCIO</span>
+              <span className="text-yellow-300">NO</span>
+              <span className="text-green-300"> CRM</span>
             </span>
           </h1>
           
