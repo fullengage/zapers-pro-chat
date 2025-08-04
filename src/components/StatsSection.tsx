@@ -23,7 +23,7 @@ const StatsSection = () => {
   ];
 
   return (
-    <section id="resultados" className="py-16 bg-gray-900 text-white">
+    <section id="resultados" className="py-16 bg-slate-600 text-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-black mb-4">NOSSA TECNOLOGIA</h2>
