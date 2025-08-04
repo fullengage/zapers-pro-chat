@@ -20,13 +20,16 @@ const HeroSection = () => {
           
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mb-8">
             A EVOLUÇÃO DO WHATSAPP
-            <span className="block text-yellow-300">NO AMBIENTE</span>
-            <span className="block text-green-300">PROFISSIONAL</span>
+            <span className="block text-yellow-300">NO SEU</span>
+            <span className="block text-green-300">NEGÓCIO</span>
           </h1>
           
           <p className="text-xl md:text-2xl mb-8 font-medium leading-relaxed max-w-4xl mx-auto">
-            <strong>Monitore e proteja as comunicações da sua equipe</strong> com nossa plataforma completa que 
-            <span className="text-yellow-300 font-bold"> armazena e visualiza mensagens e arquivos com facilidade</span>
+            <strong>Transforme a experiência de vendas e suporte pelo WhatsApp!</strong>
+            <br />
+            Com o Zapers, sua equipe atende mais rápido, vende mais e oferece um suporte muito mais profissional.
+            <br />
+            <span className="text-yellow-300 font-bold">Tenha todas as conversas organizadas, respostas ágeis e o histórico sempre à mão — tudo em um só lugar, sem complicação.</span>
           </p>
           
           {/* CTA Principal */}
@@ -47,11 +50,6 @@ const HeroSection = () => {
             </div>
           </div>
           
-          {/* Garantia */}
-          <div className="flex items-center justify-center space-x-2 text-green-300">
-            <Shield className="w-6 h-6" />
-            <span className="font-semibold text-lg">Garantia de 30 dias ou seu dinheiro de volta</span>
-          </div>
         </div>
       </div>
     </section>

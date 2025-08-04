@@ -22,7 +22,7 @@ const Footer = () => {
     },
     {
       icon: Phone,
-      text: "(11) 99999-9999"
+      text: "(17) 99791-5318"
     },
     {
       icon: MapPin,
