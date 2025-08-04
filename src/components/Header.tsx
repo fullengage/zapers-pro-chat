@@ -1,9 +1,12 @@
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, LogOut, User } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import { useAuth } from "@/hooks/useAuth";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { user, signOut } = useAuth();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -51,9 +54,33 @@ const Header = () => {
             </a>
           </nav>
           
-          <Button className="hidden md:flex" variant="hero" size="lg">
-            DEMONSTRAÇÃO GRÁTIS
-          </Button>
+          <div className="hidden md:flex items-center space-x-4">
+            {user ? (
+              <>
+                <Link to="/dashboard">
+                  <Button variant="outline" size="sm" className="gap-2">
+                    <User className="h-4 w-4" />
+                    Dashboard
+                  </Button>
+                </Link>
+                <Button variant="ghost" size="sm" onClick={signOut} className="gap-2">
+                  <LogOut className="h-4 w-4" />
+                  Sair
+                </Button>
+              </>
+            ) : (
+              <>
+                <Link to="/auth">
+                  <Button variant="outline" size="lg">
+                    Login
+                  </Button>
+                </Link>
+                <Button variant="hero" size="lg">
+                  DEMONSTRAÇÃO GRÁTIS
+                </Button>
+              </>
+            )}
+          </div>
           
           <button 
             className="md:hidden text-foreground"
@@ -85,9 +112,31 @@ const Header = () => {
               <a href="#depoimentos" className="font-semibold hover:text-primary transition-smooth">
                 Depoimentos
               </a>
-              <Button variant="hero" size="lg" className="w-full">
-                DEMONSTRAÇÃO GRÁTIS
-              </Button>
+              {user ? (
+                <>
+                  <Link to="/dashboard">
+                    <Button variant="outline" size="lg" className="w-full gap-2">
+                      <User className="h-4 w-4" />
+                      Dashboard
+                    </Button>
+                  </Link>
+                  <Button variant="ghost" size="lg" onClick={signOut} className="w-full gap-2">
+                    <LogOut className="h-4 w-4" />
+                    Sair
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <Link to="/auth">
+                    <Button variant="outline" size="lg" className="w-full">
+                      Login
+                    </Button>
+                  </Link>
+                  <Button variant="hero" size="lg" className="w-full">
+                    DEMONSTRAÇÃO GRÁTIS
+                  </Button>
+                </>
+              )}
             </nav>
           </div>
         )}
