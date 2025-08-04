@@ -15,7 +15,7 @@ const HeroSection = () => {
           {/* Social Proof Badge */}
           <div className="inline-flex items-center bg-white bg-opacity-20 backdrop-blur-sm rounded-full px-6 py-2 mb-8 border border-white/30">
             <CheckCircle className="text-green-300 mr-2 w-5 h-5" />
-            <span className="text-sm font-semibold">Mais de 5.000 empresas já transformaram sua comunicação</span>
+            <span className="text-sm font-semibold">Solução inovadora para comunicação empresarial</span>
           </div>
           
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mb-8">
@@ -43,7 +43,7 @@ const HeroSection = () => {
           <div className="bg-purple-800 text-white rounded-lg p-4 inline-block mb-8 border border-purple-600 shadow-glow">
             <div className="flex items-center justify-center space-x-2">
               <Clock className="text-yellow-300 w-5 h-5" />
-              <span className="font-bold">ATENÇÃO: Apenas 47 vagas restantes para o desconto de 30%!</span>
+              <span className="font-bold">DEMONSTRAÇÃO GRATUITA - Solicite agora!</span>
             </div>
           </div>
           

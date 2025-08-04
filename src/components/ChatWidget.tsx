@@ -42,12 +42,27 @@ const ChatWidget = () => {
     setMessages(prev => [...prev, newMessage]);
   };
 
-  const showTypingIndicator = () => {
-    setIsTyping(true);
-    setTimeout(() => {
-      setIsTyping(false);
+  const sendToWebhook = async (message: string) => {
+    try {
+      const response = await fetch('https://autowebhook.chathook.com.br/webhook/chat01', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ message }),
+      });
+
+      const data = await response.json();
+      
+      if (data && Array.isArray(data) && data.length > 0 && data[0].output) {
+        addMessage(data[0].output, false);
+      } else {
+        addMessage("Obrigado pela sua mensagem! Nossa equipe entrará em contato em breve.", false);
+      }
+    } catch (error) {
+      console.error('Erro ao enviar mensagem:', error);
       addMessage("Obrigado pela sua mensagem! Nossa equipe entrará em contato em breve.", false);
-    }, 2000);
+    }
   };
 
   const handleSendMessage = async () => {
@@ -57,8 +72,12 @@ const ChatWidget = () => {
     addMessage(message, true);
     setInputValue("");
     
-    // Simulate bot response
-    showTypingIndicator();
+    setIsTyping(true);
+    
+    setTimeout(async () => {
+      setIsTyping(false);
+      await sendToWebhook(message);
+    }, 1000);
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {

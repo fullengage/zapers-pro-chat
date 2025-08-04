@@ -30,12 +30,10 @@ const PricingSection = () => {
     {
       name: "STARTER",
       description: "Ideal para pequenas equipes",
-      originalPrice: "R$ 129",
-      currentPrice: "R$ 90",
-      period: "/mês",
+      price: "Sob consulta",
       isPopular: false,
       features: [
-        "Monitoramento de 5 funcionários",
+        "Monitoramento de até 5 funcionários",
         "Armazenamento de 50GB",
         "Relatórios básicos",
         "Suporte por email"
@@ -44,12 +42,10 @@ const PricingSection = () => {
     {
       name: "PROFISSIONAL",
       description: "Perfeito para médias empresas",
-      originalPrice: "R$ 299",
-      currentPrice: "R$ 209",
-      period: "/mês",
+      price: "Sob consulta",
       isPopular: true,
       features: [
-        "Monitoramento de 20 funcionários",
+        "Monitoramento de até 20 funcionários",
         "Armazenamento de 200GB",
         "Relatórios avançados",
         "Suporte prioritário",
@@ -59,9 +55,7 @@ const PricingSection = () => {
     {
       name: "EMPRESARIAL",
       description: "Para grandes corporações",
-      originalPrice: "R$ 599",
-      currentPrice: "R$ 419",
-      period: "/mês",
+      price: "Sob consulta",
       isPopular: false,
       features: [
         "Monitoramento ilimitado",
@@ -83,15 +77,15 @@ const PricingSection = () => {
             Escolha o plano ideal para <strong>monitorar e proteger</strong> as comunicações da sua equipe
           </p>
           
-          {/* Limited Time Offer */}
+          {/* Contact Banner */}
           <div className="gradient-bg text-white rounded-xl p-6 max-w-2xl mx-auto mt-8 shadow-elegant">
             <div className="flex items-center justify-center space-x-2 mb-4">
               <Flame className="text-yellow-300 w-6 h-6" />
-              <span className="font-black text-xl">OFERTA LIMITADA - TERMINA EM:</span>
+              <span className="font-black text-xl">SOLICITE UMA DEMONSTRAÇÃO GRATUITA</span>
               <Flame className="text-yellow-300 w-6 h-6" />
             </div>
-            <div className="text-3xl font-black">
-              {timeLeft.hours}h {timeLeft.minutes}min {timeLeft.seconds}s
+            <div className="text-lg font-semibold">
+              Entre em contato e conheça nossa solução
             </div>
           </div>
         </div>
@@ -116,12 +110,10 @@ const PricingSection = () => {
                 <h3 className="text-2xl font-black mb-2">{plan.name}</h3>
                 <p className="text-gray-600 mb-6">{plan.description}</p>
                 <div className="mb-4">
-                  <span className="text-gray-400 line-through text-lg">{plan.originalPrice}</span>
-                  <div className="text-4xl font-black text-purple-600">{plan.currentPrice}</div>
-                  <span className="text-gray-600">{plan.period}</span>
+                  <div className="text-3xl font-black text-purple-600">{plan.price}</div>
                 </div>
                 <div className="bg-purple-100 text-purple-800 px-4 py-2 rounded-full text-sm font-bold">
-                  30% OFF PRIMEIRO MÊS
+                  DEMONSTRAÇÃO GRATUITA
                 </div>
               </div>
               
@@ -139,7 +131,7 @@ const PricingSection = () => {
                 variant={plan.isPopular ? "hero" : "default"} 
                 size="lg"
               >
-                COMEÇAR AGORA
+                SOLICITAR ORÇAMENTO
               </Button>
             </div>
           ))}

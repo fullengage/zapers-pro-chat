@@ -7,18 +7,18 @@ const StatsSection = () => {
     },
     {
       number: "24/7",
-      title: "Monitoramento",
-      description: "Acompanhamento contínuo"
+      title: "Disponibilidade",
+      description: "Sistema sempre ativo"
     },
     {
-      number: "97%",
-      title: "Satisfação",
-      description: "Clientes recomendam o Zapers"
+      number: "100%",
+      title: "Controle",
+      description: "Total visibilidade das comunicações"
     },
     {
-      number: "5.000+",
-      title: "Empresas",
-      description: "Já confiam em nossa solução"
+      number: "Cloud",
+      title: "Armazenamento",
+      description: "Dados seguros na nuvem"
     }
   ];
 
@@ -26,8 +26,8 @@ const StatsSection = () => {
     <section id="resultados" className="py-16 bg-gray-900 text-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-black mb-4">RESULTADOS COMPROVADOS</h2>
-          <p className="text-xl text-gray-300">Números que demonstram nossa eficiência</p>
+          <h2 className="text-4xl font-black mb-4">NOSSA TECNOLOGIA</h2>
+          <p className="text-xl text-gray-300">Recursos que garantem máxima eficiência</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
