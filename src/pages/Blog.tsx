@@ -140,7 +140,11 @@ const Blog = () => {
                       <span>{new Date(post.date).toLocaleDateString('pt-BR')}</span>
                     </div>
                   </div>
-                  <Button variant="ghost" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-smooth">
+                  <Button 
+                    variant="ghost" 
+                    className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-smooth"
+                    onClick={() => window.location.href = `/blog/${post.id}`}
+                  >
                     Ler artigo
                     <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-smooth" />
                   </Button>
