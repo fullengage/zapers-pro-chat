@@ -37,6 +37,8 @@ All colors MUST be HSL for consistency
     --warning: 45 93% 47%;
     --warning-foreground: 0 0% 100%;
 
+    --stats-highlight: 252 87% 85%;
+
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 

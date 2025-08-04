@@ -33,7 +33,7 @@ const StatsSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <div key={index} className="text-center group">
-              <div className="stats-number mb-2 group-hover:animate-pulse-slow text-sky-300">{stat.number}</div>
+              <div className="stats-number mb-2 group-hover:animate-pulse-slow text-stats-highlight">{stat.number}</div>
               <h3 className="text-xl font-bold mb-2">{stat.title}</h3>
               <p className="text-gray-400">{stat.description}</p>
             </div>
