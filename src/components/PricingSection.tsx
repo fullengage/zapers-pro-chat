@@ -36,7 +36,8 @@ const PricingSection = () => {
         "Monitoramento de até 5 funcionários",
         "Armazenamento de 50GB",
         "Relatórios básicos",
-        "Suporte por email"
+        "Suporte por email",
+        "Um chatbot simples"
       ]
     },
     {
@@ -49,7 +50,8 @@ const PricingSection = () => {
         "Armazenamento de 200GB",
         "Relatórios avançados",
         "Suporte prioritário",
-        "Integração com outras ferramentas"
+        "Integração com outras ferramentas",
+        "Um chatbot personalizado"
       ]
     },
     {
@@ -63,7 +65,9 @@ const PricingSection = () => {
         "Relatórios customizados",
         "Suporte dedicado 24/7",
         "API completa",
-        "Treinamento para sua equipe"
+        "Treinamento para sua equipe",
+        "5 chatbots personalizados",
+        "5 chatbots assistente de vendas"
       ]
     }
   ];
