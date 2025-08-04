@@ -21,8 +21,8 @@ const HeroSection = () => {
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mb-8">
             TRANSFORME O WHATSAPP
             <span className="block">
-              <span className="text-yellow-300">NO</span>
-              <span className="text-green-300"> CRM</span>
+              <span className="text-yellow-300">NO CRM DA SUA</span>
+              <span className="text-green-300"> EMPRESA</span>
             </span>
           </h1>
           
