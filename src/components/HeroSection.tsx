@@ -27,7 +27,6 @@ const HeroSection = () => {
           </h1>
           
           <p className="text-xl md:text-2xl mb-8 font-medium leading-relaxed max-w-4xl mx-auto">
-            <strong className="block mb-4">Transforme a experiência de vendas e suporte pelo WhatsApp!</strong>
             <span className="block mb-4">
               Com o Zapers, sua equipe atende mais rápido, vende mais e oferece um suporte muito mais profissional.
             </span>
@@ -46,13 +45,6 @@ const HeroSection = () => {
             </Button>
           </div>
           
-          {/* Urgência */}
-          <div className="bg-purple-800 text-white rounded-lg p-4 inline-block mb-8 border border-purple-600 shadow-glow">
-            <div className="flex items-center justify-center space-x-2">
-              <Clock className="text-yellow-300 w-5 h-5" />
-              <span className="font-bold">DEMONSTRAÇÃO GRATUITA - Solicite agora!</span>
-            </div>
-          </div>
           
         </div>
       </div>
