@@ -13,6 +13,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Plus, Edit, Trash2, Eye, Calendar } from "lucide-react";
 import { formatDistanceToNow } from "date-fns";
 import { ptBR } from "date-fns/locale";
+import RichTextEditor from "@/components/RichTextEditor";
 
 interface BlogPost {
   id: string;
@@ -331,12 +332,11 @@ export default function Dashboard() {
 
                 <div className="space-y-2">
                   <Label htmlFor="content">Conteúdo *</Label>
-                  <Textarea
-                    id="content"
+                  <RichTextEditor
                     value={formData.content}
-                    onChange={(e) => setFormData(prev => ({ ...prev, content: e.target.value }))}
+                    onChange={(value) => setFormData(prev => ({ ...prev, content: value }))}
                     placeholder="Conteúdo completo do post..."
-                    rows={10}
+                    minHeight={300}
                   />
                 </div>
 
