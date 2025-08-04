@@ -38,7 +38,7 @@ const HeroSection = () => {
           {/* CTA Principal */}
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-12">
             <Button variant="cta" size="xl">
-              🚀 EXPERIMENTE GRÁTIS
+              🚀 COMEÇAR AGORA
             </Button>
             <Button variant="outline-white" size="xl">
               ▶️ VER DEMONSTRAÇÃO (2 min)
