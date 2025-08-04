@@ -55,7 +55,9 @@ const ChatWidget = () => {
       const data = await response.json();
       console.log('Resposta do webhook:', data);
       
-      if (data && Array.isArray(data) && data.length > 0 && data[0]?.output) {
+      if (data?.output) {
+        addMessage(data.output, false);
+      } else if (data && Array.isArray(data) && data.length > 0 && data[0]?.output) {
         addMessage(data[0].output, false);
       } else {
         console.log('Estrutura inesperada da resposta:', data);
