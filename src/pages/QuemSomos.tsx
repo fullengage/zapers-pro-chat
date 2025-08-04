@@ -134,7 +134,7 @@ const QuemSomos = () => {
       </section>
 
       {/* Por que Zapers */}
-      <section className="py-20 gradient-accent text-white">
+      <section className="py-20 bg-gray-900 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl font-black mb-8">
