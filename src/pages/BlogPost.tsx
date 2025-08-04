@@ -207,9 +207,10 @@ export default function BlogPost() {
 
           {/* Conteúdo do artigo */}
           <div className="prose prose-lg max-w-none">
-            <div className="whitespace-pre-wrap text-foreground leading-relaxed">
-              {post.content}
-            </div>
+            <div 
+              className="text-foreground leading-relaxed [&>h1]:text-3xl [&>h1]:font-bold [&>h1]:mb-4 [&>h2]:text-2xl [&>h2]:font-bold [&>h2]:mb-3 [&>h2]:mt-6 [&>h3]:text-xl [&>h3]:font-bold [&>h3]:mb-2 [&>h3]:mt-4 [&>p]:mb-4 [&>ul]:mb-4 [&>ol]:mb-4 [&>li]:mb-1 [&>strong]:font-bold [&>em]:italic [&>blockquote]:border-l-4 [&>blockquote]:border-primary [&>blockquote]:pl-4 [&>blockquote]:italic"
+              dangerouslySetInnerHTML={{ __html: post.content }}
+            />
           </div>
 
           {/* Tags */}
