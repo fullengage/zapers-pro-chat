@@ -53,10 +53,12 @@ const ChatWidget = () => {
       });
 
       const data = await response.json();
+      console.log('Resposta do webhook:', data);
       
-      if (data && Array.isArray(data) && data.length > 0 && data[0].output) {
+      if (data && Array.isArray(data) && data.length > 0 && data[0]?.output) {
         addMessage(data[0].output, false);
       } else {
+        console.log('Estrutura inesperada da resposta:', data);
         addMessage("Obrigado pela sua mensagem! Nossa equipe entrará em contato em breve.", false);
       }
     } catch (error) {
