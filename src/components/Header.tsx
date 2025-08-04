@@ -31,8 +31,11 @@ const Header = () => {
           </div>
           
           <nav className="hidden md:flex space-x-8">
-            <a href="#resultados" className="font-semibold hover:text-primary transition-smooth">
-              Resultados
+            <a href="/" className="font-semibold hover:text-primary transition-smooth">
+              Início
+            </a>
+            <a href="/quem-somos" className="font-semibold hover:text-primary transition-smooth">
+              Quem Somos
             </a>
             <a href="#solucoes" className="font-semibold hover:text-primary transition-smooth">
               Soluções
@@ -61,8 +64,11 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden bg-background border-t shadow-card">
             <nav className="flex flex-col space-y-4 p-4">
-              <a href="#resultados" className="font-semibold hover:text-primary transition-smooth">
-                Resultados
+              <a href="/" className="font-semibold hover:text-primary transition-smooth">
+                Início
+              </a>
+              <a href="/quem-somos" className="font-semibold hover:text-primary transition-smooth">
+                Quem Somos
               </a>
               <a href="#solucoes" className="font-semibold hover:text-primary transition-smooth">
                 Soluções
