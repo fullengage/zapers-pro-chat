@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Zapers Design System - Professional Purple Theme
+All colors MUST be HSL for consistency
 */
 
 @layer base {
@@ -17,26 +17,48 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Purple primary theme for Zapers */
+    --primary: 270 91% 37%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 270 100% 50%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 270 20% 96%;
+    --secondary-foreground: 270 91% 37%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 8% 46%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 270 100% 95%;
+    --accent-foreground: 270 91% 37%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --warning: 45 93% 47%;
+    --warning-foreground: 0 0% 100%;
 
-    --radius: 0.5rem;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 270 91% 37%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(270 91% 37%), hsl(259 100% 45%));
+    --gradient-hero: linear-gradient(135deg, hsl(270 91% 37%) 0%, hsl(259 100% 45%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(270 100% 95%) 0%, hsl(259 100% 98%) 100%);
+
+    /* Shadows */
+    --shadow-elegant: 0 10px 30px -10px hsl(270 91% 37% / 0.3);
+    --shadow-glow: 0 0 40px hsl(270 100% 50% / 0.4);
+    --shadow-card: 0 4px 6px -1px hsl(220 13% 91% / 0.1), 0 2px 4px -1px hsl(220 13% 91% / 0.06);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +122,174 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer components {
+  /* Zapers Custom Components */
+  .gradient-bg {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  /* Animation utilities */
+  .animate-pulse-slow {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  /* Feature card hover effects */
+  .feature-card {
+    transition: var(--transition-smooth);
+  }
+
+  .feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px hsl(270 91% 37% / 0.15);
+  }
+
+  /* Pricing card hover effects */
+  .pricing-card {
+    transition: var(--transition-smooth);
+  }
+
+  .pricing-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 50px hsl(270 91% 37% / 0.2);
+  }
+
+  /* Testimonial styling */
+  .testimonial-card {
+    background: var(--gradient-accent);
+    border-left: 4px solid hsl(var(--primary));
+  }
+
+  /* Stats number styling */
+  .stats-number {
+    font-size: 3rem;
+    font-weight: 800;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Urgency badge animation */
+  .urgency-badge {
+    animation: blink 1.5s infinite;
+  }
+
+  /* Chat typing indicator */
+  .typing-indicator {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .typing-indicator span {
+    height: 8px;
+    width: 8px;
+    background-color: hsl(var(--primary));
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 2px;
+    animation: typing 1.4s infinite;
+  }
+
+  .typing-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .typing-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+
+  /* Chat window animations */
+  .chat-window {
+    transition: var(--transition-smooth);
+    transform: translateY(100%);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .chat-window.open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Floating button effect */
+  .floating-btn {
+    box-shadow: var(--shadow-elegant);
+    animation: pulse 2s infinite;
+  }
+}
+
+@layer utilities {
+  /* Purple gradient text utility */
+  .purple-gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* Keyframe animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 20px hsl(270 100% 50% / 0.3); }
+  to { box-shadow: 0 0 30px hsl(270 100% 50% / 0.6); }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0.7; }
+}
+
+@keyframes typing {
+  0%, 60%, 100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-10px);
   }
 }
