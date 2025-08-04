@@ -1,75 +1,66 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, User, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { supabase } from "@/integrations/supabase/client";
+import { formatDistanceToNow } from "date-fns";
+import { ptBR } from "date-fns/locale";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
-const Blog = () => {
-  const blogPosts = [
-    {
-      id: 1,
-      title: "Como o WhatsApp pode revolucionar o atendimento da sua empresa",
-      description: "Descubra as principais estratégias para transformar o WhatsApp em uma ferramenta profissional de atendimento ao cliente.",
-      date: "2024-01-15",
-      author: "Richard Wagner",
-      category: "Atendimento",
-      readTime: "5 min",
-      image: "/placeholder.svg"
-    },
-    {
-      id: 2,
-      title: "CRM via WhatsApp: O futuro das vendas está aqui",
-      description: "Entenda como integrar seu processo de vendas ao WhatsApp e aumentar suas conversões em até 40%.",
-      date: "2024-01-10",
-      author: "José Carlos",
-      category: "Vendas",
-      readTime: "7 min",
-      image: "/placeholder.svg"
-    },
-    {
-      id: 3,
-      title: "Automação inteligente: Como responder clientes 24/7",
-      description: "Aprenda a configurar respostas automáticas eficientes que mantêm seus clientes engajados mesmo fora do horário comercial.",
-      date: "2024-01-05",
-      author: "Richard Wagner",
-      category: "Automação",
-      readTime: "6 min",
-      image: "/placeholder.svg"
-    },
-    {
-      id: 4,
-      title: "Cases de sucesso: Empresas que cresceram com a Zapers",
-      description: "Conheça histórias reais de empresas que transformaram seu atendimento e vendas usando nossa plataforma.",
-      date: "2023-12-28",
-      author: "José Carlos",
-      category: "Cases",
-      readTime: "8 min",
-      image: "/placeholder.svg"
-    },
-    {
-      id: 5,
-      title: "Métricas que importam: KPIs para WhatsApp Business",
-      description: "Descubra quais indicadores acompanhar para medir o sucesso do seu atendimento via WhatsApp.",
-      date: "2023-12-20",
-      author: "Richard Wagner",
-      category: "Analytics",
-      readTime: "4 min",
-      image: "/placeholder.svg"
-    },
-    {
-      id: 6,
-      title: "Segurança e privacidade no WhatsApp empresarial",
-      description: "Entenda as melhores práticas para manter a segurança dos dados dos seus clientes.",
-      date: "2023-12-15",
-      author: "José Carlos",
-      category: "Segurança",
-      readTime: "6 min",
-      image: "/placeholder.svg"
+interface BlogPost {
+  id: string;
+  title: string;
+  content: string;
+  excerpt: string;
+  slug: string;
+  category: string;
+  author_name: string;
+  author_avatar: string;
+  featured_image: string;
+  published: boolean;
+  read_time: number;
+  tags: string[];
+  meta_description: string;
+  created_at: string;
+  updated_at: string;
+  published_at: string;
+}
+
+const categories = ["Todas", "Tecnologia", "Marketing Digital", "Atendimento ao Cliente", "WhatsApp Business", "Chatbots", "Automação"];
+
+export default function Blog() {
+  const [selectedCategory, setSelectedCategory] = useState("Todas");
+  const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    fetchBlogPosts();
+  }, []);
+
+  const fetchBlogPosts = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('blog_posts')
+        .select('*')
+        .eq('published', true)
+        .order('published_at', { ascending: false });
+
+      if (error) throw error;
+      setBlogPosts(data || []);
+    } catch (error) {
+      console.error('Erro ao carregar posts:', error);
+    } finally {
+      setIsLoading(false);
     }
-  ];
+  };
 
-  const categories = ["Todos", "Atendimento", "Vendas", "Automação", "Cases", "Analytics", "Segurança"];
+  const filteredPosts = selectedCategory === "Todas" 
+    ? blogPosts 
+    : blogPosts.filter(post => post.category === selectedCategory);
 
   return (
     <div className="min-h-screen bg-background">
@@ -79,7 +70,7 @@ const Blog = () => {
       <section className="pt-32 pb-16 bg-gradient-to-br from-background to-secondary/10">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-black text-foreground mb-6">
-            Blog <span className="text-primary">Zapers</span>
+            Blog <span className="text-primary">ChatHoot</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Dicas, estratégias e insights para transformar seu WhatsApp em uma poderosa ferramenta de negócios
@@ -94,8 +85,9 @@ const Blog = () => {
             {categories.map((category) => (
               <Badge
                 key={category}
-                variant={category === "Todos" ? "default" : "secondary"}
-                className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-smooth px-4 py-2"
+                variant={category === selectedCategory ? "default" : "secondary"}
+                className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-all px-4 py-2"
+                onClick={() => setSelectedCategory(category)}
               >
                 {category}
               </Badge>
@@ -107,51 +99,69 @@ const Blog = () => {
       {/* Blog Posts Grid */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post) => (
-              <Card key={post.id} className="group hover:shadow-elegant transition-smooth cursor-pointer">
-                <div className="aspect-video bg-secondary/20 rounded-t-lg mb-4 overflow-hidden">
-                  <img 
-                    src={post.image} 
-                    alt={post.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-smooth"
-                  />
-                </div>
-                <CardHeader className="pb-3">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Badge variant="secondary">{post.category}</Badge>
-                    <span className="text-sm text-muted-foreground">{post.readTime}</span>
-                  </div>
-                  <CardTitle className="text-xl group-hover:text-primary transition-smooth line-clamp-2">
-                    {post.title}
-                  </CardTitle>
-                  <CardDescription className="line-clamp-3">
-                    {post.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex items-center justify-between text-sm text-muted-foreground mb-4">
-                    <div className="flex items-center gap-2">
-                      <User size={16} />
-                      <span>{post.author}</span>
+          {isLoading ? (
+            <div className="text-center py-12">
+              <p className="text-lg text-muted-foreground">Carregando posts...</p>
+            </div>
+          ) : filteredPosts.length === 0 ? (
+            <div className="text-center py-12">
+              <p className="text-lg text-muted-foreground">Nenhum post encontrado para esta categoria.</p>
+            </div>
+          ) : (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredPosts.map((post) => (
+                <Card key={post.id} className="h-full flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                  <CardHeader className="space-y-4">
+                    {post.featured_image && (
+                      <img
+                        src={post.featured_image}
+                        alt={post.title}
+                        className="w-full h-48 object-cover rounded-lg"
+                      />
+                    )}
+                    <div className="space-y-2">
+                      <div className="flex justify-between items-center">
+                        <Badge variant="secondary">{post.category}</Badge>
+                        <span className="text-sm text-muted-foreground">{post.read_time} min</span>
+                      </div>
+                      <CardTitle className="text-xl hover:text-primary transition-colors cursor-pointer">
+                        {post.title}
+                      </CardTitle>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <Calendar size={16} />
-                      <span>{new Date(post.date).toLocaleDateString('pt-BR')}</span>
+                  </CardHeader>
+                  <CardContent className="flex-1 flex flex-col justify-between space-y-4">
+                    <CardDescription className="text-base leading-relaxed">
+                      {post.excerpt}
+                    </CardDescription>
+                    <div className="space-y-4">
+                      <div className="flex items-center space-x-3">
+                        <img
+                          src={post.author_avatar || "/placeholder.svg"}
+                          alt={post.author_name}
+                          className="w-8 h-8 rounded-full"
+                        />
+                        <div className="flex flex-col">
+                          <span className="text-sm font-medium">{post.author_name}</span>
+                          <span className="text-xs text-muted-foreground">
+                            {formatDistanceToNow(new Date(post.published_at || post.created_at), { 
+                              addSuffix: true, 
+                              locale: ptBR 
+                            })}
+                          </span>
+                        </div>
+                      </div>
+                      <Button 
+                        onClick={() => navigate(`/blog/${post.slug}`)} 
+                        className="w-full"
+                      >
+                        Ler artigo
+                      </Button>
                     </div>
-                  </div>
-                  <Button 
-                    variant="ghost" 
-                    className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-smooth"
-                    onClick={() => window.location.href = `/blog/${post.id}`}
-                  >
-                    Ler artigo
-                    <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-smooth" />
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
@@ -166,12 +176,12 @@ const Blog = () => {
             Enviamos conteúdo exclusivo toda semana.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <input 
+            <Input 
               type="email" 
               placeholder="Seu melhor email"
-              className="flex-1 px-4 py-3 rounded-lg border border-border bg-background"
+              className="flex-1"
             />
-            <Button size="lg" className="gradient-bg text-white font-semibold">
+            <Button size="lg" className="bg-gradient-to-r from-primary to-primary/80">
               Assinar Newsletter
             </Button>
           </div>
@@ -181,6 +191,4 @@ const Blog = () => {
       <Footer />
     </div>
   );
-};
-
-export default Blog;
+}

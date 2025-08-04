@@ -14,6 +14,63 @@ export type Database = {
   }
   public: {
     Tables: {
+      blog_posts: {
+        Row: {
+          author_avatar: string | null
+          author_name: string
+          category: string
+          content: string
+          created_at: string
+          excerpt: string | null
+          featured_image: string | null
+          id: string
+          meta_description: string | null
+          published: boolean
+          published_at: string | null
+          read_time: number | null
+          slug: string
+          tags: string[] | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          author_avatar?: string | null
+          author_name: string
+          category: string
+          content: string
+          created_at?: string
+          excerpt?: string | null
+          featured_image?: string | null
+          id?: string
+          meta_description?: string | null
+          published?: boolean
+          published_at?: string | null
+          read_time?: number | null
+          slug: string
+          tags?: string[] | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          author_avatar?: string | null
+          author_name?: string
+          category?: string
+          content?: string
+          created_at?: string
+          excerpt?: string | null
+          featured_image?: string | null
+          id?: string
+          meta_description?: string | null
+          published?: boolean
+          published_at?: string | null
+          read_time?: number | null
+          slug?: string
+          tags?: string[] | null
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       chat_messages: {
         Row: {
           active: boolean | null
