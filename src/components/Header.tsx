@@ -37,6 +37,9 @@ const Header = () => {
             <a href="/quem-somos" className="font-semibold hover:text-primary transition-smooth">
               Quem Somos
             </a>
+            <a href="/blog" className="font-semibold hover:text-primary transition-smooth">
+              Blog
+            </a>
             <a href="#solucoes" className="font-semibold hover:text-primary transition-smooth">
               Soluções
             </a>
@@ -69,6 +72,9 @@ const Header = () => {
               </a>
               <a href="/quem-somos" className="font-semibold hover:text-primary transition-smooth">
                 Quem Somos
+              </a>
+              <a href="/blog" className="font-semibold hover:text-primary transition-smooth">
+                Blog
               </a>
               <a href="#solucoes" className="font-semibold hover:text-primary transition-smooth">
                 Soluções
