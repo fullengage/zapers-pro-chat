@@ -16,7 +16,7 @@ const QuemSomos = () => {
               QUEM SOMOS
             </h1>
             <p className="text-xl md:text-2xl leading-relaxed">
-              A Zapers é uma solução brasileira inovadora que transforma o WhatsApp no CRM da sua empresa: 
+              A ZapCode é uma solução brasileira inovadora que transforma o WhatsApp no CRM da sua empresa: 
               unificando atendimentos, vendas e suporte em um só lugar simples, ágil e profissional.
             </p>
           </div>
@@ -47,7 +47,7 @@ const QuemSomos = () => {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-black mb-6">
-                Por trás da Zapers
+                Por trás da ZapCode
               </h2>
             </div>
             
@@ -138,7 +138,7 @@ const QuemSomos = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl font-black mb-8">
-              Por que Zapers?
+              Por que ZapCode?
             </h2>
             <p className="text-xl leading-relaxed mb-8">
               Porque você quer vender com humanidade, sem abrir mão da organização e rapidez de um CRM. 
@@ -147,7 +147,7 @@ const QuemSomos = () => {
             </p>
             <p className="text-xl leading-relaxed">
               <strong>Pronto para transformar o WhatsApp no centro de relacionamento da sua empresa?</strong> 
-              {" "}Fale com a gente — nós da Zapers estamos prontos para elevar sua comunicação a um novo patamar.
+              {" "}Fale com a gente — nós da ZapCode estamos prontos para elevar sua comunicação a um novo patamar.
             </p>
           </div>
         </div>

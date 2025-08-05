@@ -30,7 +30,7 @@ const Header = () => {
             <div className="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center mr-3 shadow-elegant">
               <span className="text-white font-bold text-2xl">Z</span>
             </div>
-            <span className="text-2xl font-black text-foreground">ZAPERS</span>
+            <span className="text-2xl font-black text-foreground">ZAPCODE</span>
           </div>
           
           <nav className="hidden md:flex space-x-8">

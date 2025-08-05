@@ -87,7 +87,7 @@ const ProblemSolutionSection = () => {
           {/* Solution */}
           <div className="text-center">
             <h2 className="text-4xl font-black mb-8 text-purple-600">
-              ✅ A SOLUÇÃO ZAPERS
+              ✅ A SOLUÇÃO ZAPCODE
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {solutions.map((solution, index) => {

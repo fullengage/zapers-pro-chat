@@ -28,7 +28,7 @@ const HeroSection = () => {
           
           <p className="text-xl md:text-2xl mb-8 font-medium leading-relaxed max-w-4xl mx-auto">
             <span className="block mb-4">
-              Com o Zapers, sua equipe atende mais rápido, vende mais e oferece um suporte muito mais profissional.
+              Com o ZapCode, sua equipe atende mais rápido, vende mais e oferece um suporte muito mais profissional.
             </span>
             <span className="text-yellow-300 font-bold block">
               Tenha todas as conversas organizadas, respostas ágeis e o histórico sempre à mão — tudo em um só lugar, sem complicação.

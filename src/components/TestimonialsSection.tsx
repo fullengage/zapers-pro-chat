@@ -7,7 +7,7 @@ const TestimonialsSection = () => {
       icon: Building,
       company: "Paschoalotto",
       industry: "Escritório de Advocacia",
-      testimonial: "O Zapers revolucionou nossa comunicação interna. Conseguimos monitorar todas as interações e manter nosso sigilo profissional com total segurança.",
+      testimonial: "O ZapCode revolucionou nossa comunicação interna. Conseguimos monitorar todas as interações e manter nosso sigilo profissional com total segurança.",
       bgColor: "bg-purple-100",
       iconColor: "text-purple-600"
     },
@@ -23,7 +23,7 @@ const TestimonialsSection = () => {
       icon: Zap,
       company: "Maxy Dist. Solar",
       industry: "Distribuidora de Energia",
-      testimonial: "Com o Zapers, conseguimos monitorar e proteger as comunicações da nossa equipe de vendas. O resultado foi um aumento de 40% na eficiência.",
+      testimonial: "Com o ZapCode, conseguimos monitorar e proteger as comunicações da nossa equipe de vendas. O resultado foi um aumento de 40% na eficiência.",
       bgColor: "bg-purple-100",
       iconColor: "text-purple-600"
     }
@@ -41,7 +41,7 @@ const TestimonialsSection = () => {
     <section id="depoimentos" className="py-20 bg-gray-900 text-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-black mb-6">POR QUE ESCOLHER O ZAPERS?</h2>
+          <h2 className="text-4xl font-black mb-6">POR QUE ESCOLHER O ZAPCODE?</h2>
           <p className="text-xl text-gray-300">Benefícios que fazem a diferença na sua empresa</p>
         </div>
         

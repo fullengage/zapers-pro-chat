@@ -18,7 +18,7 @@ const Footer = () => {
   const contactInfo = [
     {
       icon: Mail,
-      text: "contato@zapers.com.br"
+      text: "contato@zapcode.com.br"
     },
     {
       icon: Phone,
@@ -46,7 +46,7 @@ const Footer = () => {
               <div className="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center mr-3 shadow-elegant">
                 <span className="text-white font-bold text-xl">Z</span>
               </div>
-              <span className="text-xl font-bold">ZAPERS</span>
+              <span className="text-xl font-bold">ZAPCODE</span>
             </div>
             <p className="text-gray-400">A evolução do WhatsApp no ambiente profissional.</p>
           </div>
@@ -105,7 +105,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 Zapers. Todos os direitos reservados.</p>
+          <p>&copy; 2024 ZapCode. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>

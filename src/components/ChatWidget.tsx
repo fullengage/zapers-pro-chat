@@ -120,7 +120,7 @@ const ChatWidget = () => {
               <Bot className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="font-bold">Assistente Zapers</h4>
+              <h4 className="font-bold">Assistente ZapCode</h4>
               <p className="text-xs opacity-80">Online agora</p>
             </div>
           </div>

@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Zapers Design System - Professional Purple Theme
+/* ZapCode Design System - Professional Purple Theme
 All colors MUST be HSL for consistency
 */
 
@@ -17,7 +17,7 @@ All colors MUST be HSL for consistency
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    /* Purple primary theme for Zapers */
+    /* Purple primary theme for ZapCode */
     --primary: 270 91% 37%;
     --primary-foreground: 0 0% 100%;
     --primary-glow: 270 100% 50%;
@@ -129,7 +129,7 @@ All colors MUST be HSL for consistency
 }
 
 @layer components {
-  /* Zapers Custom Components */
+  /* ZapCode Custom Components */
   .gradient-bg {
     background: var(--gradient-primary);
   }
