@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import logo from '/logo-zapcode.png';
 import { Menu, X, LogOut, User } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -27,10 +28,8 @@ const Header = () => {
       <header className="sticky top-0 z-50 bg-background shadow-card border-b">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center">
-            <div className="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center mr-3 shadow-elegant">
-              <span className="text-white font-bold text-2xl">Z</span>
-            </div>
-            <span className="text-2xl font-black text-foreground">ZAPCODE</span>
+            <img src={logo} alt="Zapcode Logo" className="h-24 w-auto" />
+            <span className="text-2xl font-black text-foreground"></span>
           </div>
           
           <nav className="hidden md:flex space-x-8">
