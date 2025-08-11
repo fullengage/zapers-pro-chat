@@ -136,7 +136,7 @@ const PricingSection = () => {
             </div>
             <div className="text-left space-y-4 max-w-3xl mx-auto">
               <p className="text-lg text-gray-700">
-                O ZAPCODE não é para qualquer empresa.
+                O ZAPCODE é a solução que faltava no seu dia a dia
               </p>
               <p className="text-lg text-gray-700">
                 Ele foi criado para organizações que gerenciam grandes volumes de conversas, com múltiplos canais de WhatsApp e equipes dedicadas ao atendimento e vendas.
