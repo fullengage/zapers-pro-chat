@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Shield, CheckCircle, Clock } from "lucide-react";
+import { useState } from "react";
 
 const HeroSection = () => {
   return (
@@ -40,9 +42,24 @@ const HeroSection = () => {
             <Button variant="cta" size="xl">
               🚀 COMEÇAR AGORA
             </Button>
-            <Button variant="outline-white" size="xl">
-              ▶️ VER DEMONSTRAÇÃO (2 min)
-            </Button>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button variant="outline-white" size="xl">
+                  ▶️ VER DEMONSTRAÇÃO (2 min)
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-4xl w-full h-auto p-0 bg-black border-0">
+                <div className="relative w-full h-0 pb-[56.25%]">
+                  <iframe
+                    src="https://www.youtube.com/embed/okmis967jwk?autoplay=1"
+                    title="Demonstração ZapCode"
+                    className="absolute inset-0 w-full h-full rounded-lg"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+              </DialogContent>
+            </Dialog>
           </div>
           
           
