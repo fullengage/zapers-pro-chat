@@ -216,8 +216,11 @@ const PricingSection = () => {
                 className="w-full" 
                 variant={plan.isPopular ? "hero" : "default"} 
                 size="lg"
+                asChild
               >
-                FALAR COM ESPECIALISTA
+                <a href="https://wa.me/5517997915318" target="_blank" rel="noopener noreferrer">
+                  FALAR COM ESPECIALISTA
+                </a>
               </Button>
             </div>
           ))}
