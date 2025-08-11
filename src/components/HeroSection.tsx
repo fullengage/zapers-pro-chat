@@ -51,7 +51,7 @@ const HeroSection = () => {
               <DialogContent className="max-w-4xl w-full h-auto p-0 bg-black border-0">
                 <div className="relative w-full h-0 pb-[56.25%]">
                   <iframe
-                    src="https://www.youtube.com/embed/okmis967jwk?autoplay=1"
+                    src="https://www.youtube.com/embed/b8ZfHHFTTK0?autoplay=1"
                     title="Demonstração ZapCode"
                     className="absolute inset-0 w-full h-full rounded-lg"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
