@@ -37,20 +37,11 @@ const Header = () => {
             <a href="/" className="font-semibold hover:text-primary transition-smooth">
               Início
             </a>
-            <a href="/quem-somos" className="font-semibold hover:text-primary transition-smooth">
-              Quem Somos
-            </a>
-            <a href="/blog" className="font-semibold hover:text-primary transition-smooth">
-              Blog
-            </a>
             <a href="#solucoes" className="font-semibold hover:text-primary transition-smooth">
               Soluções
             </a>
             <a href="#precos" className="font-semibold hover:text-primary transition-smooth">
               Preços
-            </a>
-            <a href="#depoimentos" className="font-semibold hover:text-primary transition-smooth">
-              Depoimentos
             </a>
           </nav>
           
@@ -97,20 +88,11 @@ const Header = () => {
               <a href="/" className="font-semibold hover:text-primary transition-smooth">
                 Início
               </a>
-              <a href="/quem-somos" className="font-semibold hover:text-primary transition-smooth">
-                Quem Somos
-              </a>
-              <a href="/blog" className="font-semibold hover:text-primary transition-smooth">
-                Blog
-              </a>
               <a href="#solucoes" className="font-semibold hover:text-primary transition-smooth">
                 Soluções
               </a>
               <a href="#precos" className="font-semibold hover:text-primary transition-smooth">
                 Preços
-              </a>
-              <a href="#depoimentos" className="font-semibold hover:text-primary transition-smooth">
-                Depoimentos
               </a>
               {user ? (
                 <>
