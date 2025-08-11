@@ -183,46 +183,94 @@ const SolutionsSection = () => {
               <Accordion type="single" collapsible defaultValue="item-3" className="w-full">
                 <AccordionItem value="item-1">
                   <AccordionTrigger className="text-left text-lg font-semibold">
-                    WhatsApp CRM para vendas
+                    WhatsApp CRM para Vendas
                   </AccordionTrigger>
                   <AccordionContent className="text-left space-y-2">
-                    <p>O WhatsApp foi feito para conversas casuais e não para conversas de vendas importantes. Impulsione seu WhatsApp com a Kommo: feita para gerir todo o seu processo de vendas.</p>
-                    <ul className="list-disc list-inside space-y-1 mt-4">
-                      <li>Capture novos leads do WhatsApp imediatamente</li>
-                      <li>Organize possíveis clientes num funil de vendas</li>
-                      <li>Organize-se com perfis para todos os clientes</li>
-                      <li>Mais recursos de CRM de vendas para WhatsApp</li>
+                    <div className="mb-3">
+                      <span className="inline-block bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold mb-2">ZAPCODE</span>
+                    </div>
+                    <p>O WhatsApp é ótimo para conversar, mas não nasceu para fechar vendas. Com a ZAPCODE, você transforma o seu WhatsApp em uma máquina de vendas organizada e eficiente.</p>
+                    <ul className="space-y-2 mt-4">
+                      <li className="flex items-start">
+                        <span className="text-green-500 mr-2">✅</span>
+                        <span>Capte novos leads automaticamente</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-green-500 mr-2">✅</span>
+                        <span>Organize cada contato em um funil de vendas claro</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-green-500 mr-2">✅</span>
+                        <span>Centralize informações com perfis completos de clientes</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-green-500 mr-2">✅</span>
+                        <span>Gerencie todo o processo comercial sem sair do WhatsApp</span>
+                      </li>
                     </ul>
+                    <p className="mt-4 font-semibold text-primary">Com a ZAPCODE, seu atendimento deixa de ser improviso e vira processo.</p>
                   </AccordionContent>
                 </AccordionItem>
                 
                 <AccordionItem value="item-2">
                   <AccordionTrigger className="text-left text-lg font-semibold">
-                    WhatsApp CRM para equipes
+                    WhatsApp CRM para Equipes
                   </AccordionTrigger>
                   <AccordionContent className="text-left space-y-2">
-                    <p>Quando as equipes usam o WhatsApp, as coisas podem ficar confusas rapidamente: números de telefone separados, aparelhos diferentes… é uma dor de cabeça. Por isso que a Kommo ajuda as equipes a se conectarem e compartilharem o acesso em um único aplicativo.</p>
-                    <ul className="list-disc list-inside space-y-1 mt-4">
-                      <li>Conecte vários números do WhatsApp</li>
-                      <li>Controle o acesso à caixa de entrada</li>
-                      <li>Bate-papo com colegas</li>
-                      <li>Mais recursos de CRM do WhatsApp para equipes</li>
+                    <div className="mb-3">
+                      <span className="inline-block bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold mb-2">ZAPCODE</span>
+                    </div>
+                    <p>Quando sua equipe usa o WhatsApp de forma tradicional, o caos começa: números espalhados, celulares diferentes, conversas perdidas… A ZAPCODE resolve isso conectando todo mundo em um único lugar.</p>
+                    <ul className="space-y-2 mt-4">
+                      <li className="flex items-start">
+                        <span className="text-green-500 mr-2">✅</span>
+                        <span>Conecte vários números do WhatsApp</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-green-500 mr-2">✅</span>
+                        <span>Controle quem acessa cada conversa</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-green-500 mr-2">✅</span>
+                        <span>Troque mensagens internas com a equipe</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-green-500 mr-2">✅</span>
+                        <span>Tenha todos os recursos de CRM no próprio WhatsApp</span>
+                      </li>
                     </ul>
+                    <p className="mt-4 font-semibold text-primary">Com a ZAPCODE, seu time trabalha junto, vê tudo e não perde nenhuma oportunidade.</p>
                   </AccordionContent>
                 </AccordionItem>
                 
                 <AccordionItem value="item-3">
                   <AccordionTrigger className="text-left text-lg font-semibold">
-                    WhatsApp CRM para gerentes
+                    WhatsApp CRM para Gerentes
                   </AccordionTrigger>
                   <AccordionContent className="text-left space-y-2">
-                    <p>Ainda não sabe se alguém respondeu a esse novo cliente em potencial? Na Kommo, os gerentes não precisam se perguntar - é fácil colocar todos os membros da equipe na tarefa.</p>
-                    <ul className="list-disc list-inside space-y-1 mt-4">
-                      <li>Crie e gerencie tarefas</li>
-                      <li>Defina metas e avalie o desempenho do WhatsApp</li>
-                      <li>Controle quem tem acesso a quê</li>
-                      <li>Mais recursos do CRM do WhatsApp para gerentes</li>
+                    <div className="mb-3">
+                      <span className="inline-block bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold mb-2">ZAPCODE</span>
+                    </div>
+                    <p>Cansado de se perguntar se aquele cliente já foi respondido? Com a ZAPCODE, os gerentes têm visão total sobre cada conversa e controle sobre todo o processo de vendas no WhatsApp.</p>
+                    <ul className="space-y-2 mt-4">
+                      <li className="flex items-start">
+                        <span className="text-green-500 mr-2">✅</span>
+                        <span>Crie e atribua tarefas para a equipe</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-green-500 mr-2">✅</span>
+                        <span>Defina metas e acompanhe o desempenho</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-green-500 mr-2">✅</span>
+                        <span>Controle permissões e acessos</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-green-500 mr-2">✅</span>
+                        <span>Tenha todos os recursos de CRM direto no WhatsApp</span>
+                      </li>
                     </ul>
+                    <p className="mt-4 font-semibold text-primary">Com a ZAPCODE, você deixa de apagar incêndios e passa a gerenciar com clareza, rapidez e resultados.</p>
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
