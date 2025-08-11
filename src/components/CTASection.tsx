@@ -22,10 +22,6 @@ const CTASection = () => {
             </Button>
           </div>
           
-          <div className="mt-10 flex items-center justify-center space-x-2 text-green-300">
-            <Shield className="w-6 h-6" />
-            <span className="font-semibold text-lg">Sem compromisso. Cancele quando quiser.</span>
-          </div>
         </div>
       </div>
     </section>
