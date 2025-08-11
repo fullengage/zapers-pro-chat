@@ -174,42 +174,6 @@ const SolutionsSection = () => {
         
         {/* WhatsApp CRM Section */}
         <div className="mt-20 max-w-4xl mx-auto">
-          {/* Carousel */}
-          <div className="mb-12">
-            <Carousel className="w-full max-w-3xl mx-auto" opts={{ align: "start", loop: true }}>
-              <CarouselContent>
-                <CarouselItem>
-                  <div className="p-1">
-                    <img 
-                      src={carousel1} 
-                      alt="WhatsApp CRM Feature 1" 
-                      className="w-full h-auto rounded-3xl"
-                    />
-                  </div>
-                </CarouselItem>
-                <CarouselItem>
-                  <div className="p-1">
-                    <img 
-                      src={carousel2} 
-                      alt="WhatsApp CRM Feature 2" 
-                      className="w-full h-auto rounded-3xl"
-                    />
-                  </div>
-                </CarouselItem>
-                <CarouselItem>
-                  <div className="p-1">
-                    <img 
-                      src={carousel3} 
-                      alt="WhatsApp CRM Feature 3" 
-                      className="w-full h-auto rounded-3xl"
-                    />
-                  </div>
-                </CarouselItem>
-              </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
-            </Carousel>
-          </div>
 
           {/* CRM Help Section */}
           <div className="text-center mb-12">
