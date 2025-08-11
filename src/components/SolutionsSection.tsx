@@ -1,5 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Shield, Archive, Eye, Search, Bell, BarChart, Cloud, Folder, Download, History } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import carousel1 from "@/assets/carousel-1.png";
+import carousel2 from "@/assets/carousel-2.png";
+import carousel3 from "@/assets/carousel-3.png";
 
 const SolutionsSection = () => {
   const monitoringFeatures = [
@@ -112,6 +117,100 @@ const SolutionsSection = () => {
           </div>
         </div>
         
+        {/* WhatsApp CRM Section */}
+        <div className="mt-20 max-w-4xl mx-auto">
+          {/* Carousel */}
+          <div className="mb-12">
+            <Carousel className="w-full max-w-3xl mx-auto" opts={{ align: "start", loop: true }}>
+              <CarouselContent>
+                <CarouselItem>
+                  <div className="p-1">
+                    <img 
+                      src={carousel1} 
+                      alt="WhatsApp CRM Feature 1" 
+                      className="w-full h-auto rounded-3xl"
+                    />
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="p-1">
+                    <img 
+                      src={carousel2} 
+                      alt="WhatsApp CRM Feature 2" 
+                      className="w-full h-auto rounded-3xl"
+                    />
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="p-1">
+                    <img 
+                      src={carousel3} 
+                      alt="WhatsApp CRM Feature 3" 
+                      className="w-full h-auto rounded-3xl"
+                    />
+                  </div>
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
+          </div>
+
+          {/* CRM Help Section */}
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-black text-gray-800 mb-8">Como o WhatsApp CRM pode ajudar?</h3>
+            
+            <div className="bg-white rounded-2xl shadow-card border border-gray-100 p-8">
+              <Accordion type="single" collapsible defaultValue="item-3" className="w-full">
+                <AccordionItem value="item-1">
+                  <AccordionTrigger className="text-left text-lg font-semibold">
+                    WhatsApp CRM para vendas
+                  </AccordionTrigger>
+                  <AccordionContent className="text-left space-y-2">
+                    <p>O WhatsApp foi feito para conversas casuais e não para conversas de vendas importantes. Impulsione seu WhatsApp com a Kommo: feita para gerir todo o seu processo de vendas.</p>
+                    <ul className="list-disc list-inside space-y-1 mt-4">
+                      <li>Capture novos leads do WhatsApp imediatamente</li>
+                      <li>Organize possíveis clientes num funil de vendas</li>
+                      <li>Organize-se com perfis para todos os clientes</li>
+                      <li>Mais recursos de CRM de vendas para WhatsApp</li>
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="item-2">
+                  <AccordionTrigger className="text-left text-lg font-semibold">
+                    WhatsApp CRM para equipes
+                  </AccordionTrigger>
+                  <AccordionContent className="text-left space-y-2">
+                    <p>Quando as equipes usam o WhatsApp, as coisas podem ficar confusas rapidamente: números de telefone separados, aparelhos diferentes… é uma dor de cabeça. Por isso que a Kommo ajuda as equipes a se conectarem e compartilharem o acesso em um único aplicativo.</p>
+                    <ul className="list-disc list-inside space-y-1 mt-4">
+                      <li>Conecte vários números do WhatsApp</li>
+                      <li>Controle o acesso à caixa de entrada</li>
+                      <li>Bate-papo com colegas</li>
+                      <li>Mais recursos de CRM do WhatsApp para equipes</li>
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="item-3">
+                  <AccordionTrigger className="text-left text-lg font-semibold">
+                    WhatsApp CRM para gerentes
+                  </AccordionTrigger>
+                  <AccordionContent className="text-left space-y-2">
+                    <p>Ainda não sabe se alguém respondeu a esse novo cliente em potencial? Na Kommo, os gerentes não precisam se perguntar - é fácil colocar todos os membros da equipe na tarefa.</p>
+                    <ul className="list-disc list-inside space-y-1 mt-4">
+                      <li>Crie e gerencie tarefas</li>
+                      <li>Defina metas e avalie o desempenho do WhatsApp</li>
+                      <li>Controle quem tem acesso a quê</li>
+                      <li>Mais recursos do CRM do WhatsApp para gerentes</li>
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </div>
+          </div>
+        </div>
+
         <div className="text-center mt-16">
           <Button variant="hero" size="xl">
             🎯 QUERO TRANSFORMAR MINHA COMUNICAÇÃO
