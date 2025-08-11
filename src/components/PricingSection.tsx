@@ -158,7 +158,7 @@ const PricingSection = () => {
                 </div>
               </div>
               <p className="text-gray-600 italic">
-                Não é uma ferramenta para pequenas empresas como padarias ou pizzarias que atendem de um único número — nosso foco é otimizar operações complexas e aumentar o desempenho de times que já atendem em escala.
+                É uma solução completa para empresas que precisam qualificar contatos e otimizar o atendimento. Com ela, é possível criar várias equipes, distribuir conversas entre agentes de forma inteligente — levando em conta critérios como canal, horário ou fila de espera. Ideal para empresas que desejam segmentar o atendimento por setor (comercial, suporte, financeiro, etc.) ou até por produto e serviço, garantindo mais agilidade, organização e eficiência em cada interação.
               </p>
             </div>
           </div>
