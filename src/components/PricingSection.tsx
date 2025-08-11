@@ -29,45 +29,50 @@ const PricingSection = () => {
   const plans = [
     {
       name: "STARTER",
-      description: "Ideal para pequenas equipes",
+      description: "Para empresas iniciando operações multi-canal",
       price: "Sob consulta",
       isPopular: false,
       features: [
-        "Monitoramento de até 5 funcionários",
-        "Armazenamento de 50GB",
-        "Relatórios básicos",
+        "Até 10 números de WhatsApp conectados",
+        "Gestão de equipe de até 15 agentes",
+        "Dashboard básico de conversas",
+        "Relatórios de volume e resposta",
         "Suporte por email",
-        "Um chatbot simples"
+        "Controle básico de permissões"
       ]
     },
     {
       name: "PROFISSIONAL",
-      description: "Perfeito para médias empresas",
+      description: "Para empresas com operações consolidadas",
       price: "Sob consulta",
       isPopular: true,
       features: [
-        "Monitoramento de até 20 funcionários",
-        "Armazenamento de 200GB",
-        "Relatórios avançados",
+        "Até 25 números de WhatsApp conectados",
+        "Gestão de equipe de até 50 agentes",
+        "Dashboard avançado com métricas",
+        "Relatórios detalhados e customizáveis",
         "Suporte prioritário",
-        "Integração com outras ferramentas",
-        "Um chatbot personalizado"
+        "Controle avançado de permissões",
+        "Integração com CRM externo",
+        "Automações básicas"
       ]
     },
     {
       name: "EMPRESARIAL",
-      description: "Para grandes corporações",
+      description: "Para grandes operações com múltiplas equipes",
       price: "Sob consulta",
       isPopular: false,
       features: [
-        "Monitoramento ilimitado",
-        "Armazenamento ilimitado",
-        "Relatórios customizados",
+        "Números de WhatsApp ilimitados",
+        "Gestão de equipe ilimitada",
+        "Dashboard executivo completo",
+        "Relatórios em tempo real",
         "Suporte dedicado 24/7",
-        "API completa",
-        "Treinamento para sua equipe",
-        "5 chatbots personalizados",
-        "5 chatbots assistente de vendas"
+        "API completa para integração",
+        "Treinamento para toda equipe",
+        "Automações avançadas",
+        "Chatbots personalizados ilimitados",
+        "Rastreabilidade total de conversas"
       ]
     }
   ];
@@ -76,13 +81,45 @@ const PricingSection = () => {
     <section id="precos" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-black mb-6">PLANOS PARA TODOS OS TAMANHOS DE EMPRESA</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Escolha o plano ideal para <strong>monitorar e proteger</strong> as comunicações da sua equipe
-          </p>
+          <h2 className="text-4xl font-black mb-6">PLANOS PARA EMPRESAS COM OPERAÇÕES COMPLEXAS DE WHATSAPP</h2>
+          
+          {/* Who uses ZAPCODE section */}
+          <div className="bg-gray-50 rounded-xl p-8 max-w-4xl mx-auto mb-12">
+            <div className="flex items-center justify-center space-x-2 mb-6">
+              <span className="text-2xl">💬</span>
+              <h3 className="text-2xl font-black">Quem usa o ZAPCODE?</h3>
+            </div>
+            <div className="text-left space-y-4 max-w-3xl mx-auto">
+              <p className="text-lg text-gray-700">
+                O ZAPCODE não é para qualquer empresa.
+              </p>
+              <p className="text-lg text-gray-700">
+                Ele foi criado para organizações que gerenciam grandes volumes de conversas, com múltiplos canais de WhatsApp e equipes dedicadas ao atendimento e vendas.
+              </p>
+              <div className="bg-white rounded-lg p-6 mt-6">
+                <div className="space-y-3">
+                  <div className="flex items-center">
+                    <Check className="text-green-500 mr-3 w-5 h-5 flex-shrink-0" />
+                    <span className="font-semibold">Para quem trabalha com 10 ou mais números de WhatsApp</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Check className="text-green-500 mr-3 w-5 h-5 flex-shrink-0" />
+                    <span className="font-semibold">Tem uma equipe inteira atendendo clientes</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Check className="text-green-500 mr-3 w-5 h-5 flex-shrink-0" />
+                    <span className="font-semibold">Precisa de controle, rastreabilidade e relatórios</span>
+                  </div>
+                </div>
+              </div>
+              <p className="text-gray-600 italic">
+                Não é uma ferramenta para pequenas empresas como padarias ou pizzarias que atendem de um único número — nosso foco é otimizar operações complexas e aumentar o desempenho de times que já atendem em escala.
+              </p>
+            </div>
+          </div>
           
           {/* Contact Banner */}
-          <div className="gradient-bg text-white rounded-xl p-6 max-w-2xl mx-auto mt-8 shadow-elegant">
+          <div className="gradient-bg text-white rounded-xl p-6 max-w-2xl mx-auto shadow-elegant">
             <div className="flex items-center justify-center space-x-2 mb-4">
               <Flame className="text-yellow-300 w-6 h-6" />
               <span className="font-black text-xl">SOLICITE UMA DEMONSTRAÇÃO GRATUITA</span>
