@@ -217,7 +217,7 @@ const PricingSection = () => {
                 variant={plan.isPopular ? "hero" : "default"} 
                 size="lg"
               >
-                SOLICITAR ORÇAMENTO
+                FALAR COM ESPECIALISTA
               </Button>
             </div>
           ))}
