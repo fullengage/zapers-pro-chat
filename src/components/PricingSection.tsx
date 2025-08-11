@@ -78,7 +78,52 @@ const PricingSection = () => {
   ];
 
   return (
-    <section id="precos" className="py-20 bg-white">
+    <>
+      {/* Sales Management Challenge Section */}
+      <section className="py-20 bg-gradient-to-br from-red-50 to-orange-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl font-black mb-8 text-gray-900">
+              O desafio de gerenciar uma equipe de vendas no WhatsApp
+            </h2>
+            <p className="text-xl text-gray-700 mb-8 leading-relaxed">
+              Se você é supervisor ou gerente de vendas, sabe como é difícil garantir que cada lead seja respondido rapidamente, que todas as conversas estejam organizadas e que ninguém perca oportunidades.
+            </p>
+            
+            <div className="grid md:grid-cols-3 gap-6 mb-10">
+              <div className="bg-white/70 backdrop-blur-sm rounded-xl p-6 border border-red-200">
+                <div className="text-red-500 text-2xl mb-3">📌</div>
+                <p className="text-gray-800 font-semibold">Conversas espalhadas em vários números.</p>
+              </div>
+              <div className="bg-white/70 backdrop-blur-sm rounded-xl p-6 border border-red-200">
+                <div className="text-red-500 text-2xl mb-3">📌</div>
+                <p className="text-gray-800 font-semibold">Dúvida se o cliente foi atendido ou não.</p>
+              </div>
+              <div className="bg-white/70 backdrop-blur-sm rounded-xl p-6 border border-red-200">
+                <div className="text-red-500 text-2xl mb-3">📌</div>
+                <p className="text-gray-800 font-semibold">Falta de controle sobre quem respondeu o quê.</p>
+              </div>
+            </div>
+            
+            <div className="bg-red-100 border border-red-300 rounded-xl p-6 mb-8">
+              <p className="text-lg font-bold text-red-800">
+                O resultado? Vendas perdidas, retrabalho e zero visibilidade sobre o que realmente está acontecendo no time.
+              </p>
+            </div>
+            
+            <div className="bg-white rounded-xl p-8 shadow-lg border-2 border-green-200">
+              <p className="text-xl text-gray-800 mb-6 leading-relaxed">
+                Com o <span className="font-black text-purple-600">ZAPCODE</span>, você centraliza todos os números de WhatsApp em um só painel, acompanha cada interação, define tarefas e mede o desempenho de cada vendedor — tudo em tempo real.
+              </p>
+              <div className="text-2xl font-black text-green-600">
+                💬 Mais controle, mais vendas, menos dor de cabeça.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="precos" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-black mb-6">PLANOS PARA EMPRESAS COM OPERAÇÕES COMPLEXAS DE WHATSAPP</h2>
@@ -178,7 +223,8 @@ const PricingSection = () => {
           ))}
         </div>
       </div>
-    </section>
+      </section>
+    </>
   );
 };
 
