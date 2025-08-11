@@ -132,7 +132,7 @@ const PricingSection = () => {
           <div className="bg-gray-50 rounded-xl p-8 max-w-4xl mx-auto mb-12">
             <div className="flex items-center justify-center space-x-2 mb-6">
               <span className="text-2xl">💬</span>
-              <h3 className="text-2xl font-black">Quem usa o ZAPCODE?</h3>
+              <h3 className="text-2xl font-black">O ZAPCODE foi pensado para sua empresa!</h3>
             </div>
             <div className="text-left space-y-4 max-w-3xl mx-auto">
               <p className="text-lg text-gray-700">
