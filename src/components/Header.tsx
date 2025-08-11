@@ -37,6 +37,9 @@ const Header = () => {
             <a href="/" className="font-semibold hover:text-primary transition-smooth">
               Início
             </a>
+            <a href="#monitoramento" className="font-semibold hover:text-primary transition-smooth">
+              Monitoramento
+            </a>
             <a href="#solucoes" className="font-semibold hover:text-primary transition-smooth">
               Soluções
             </a>
@@ -87,6 +90,9 @@ const Header = () => {
             <nav className="flex flex-col space-y-4 p-4">
               <a href="/" className="font-semibold hover:text-primary transition-smooth">
                 Início
+              </a>
+              <a href="#monitoramento" className="font-semibold hover:text-primary transition-smooth">
+                Monitoramento
               </a>
               <a href="#solucoes" className="font-semibold hover:text-primary transition-smooth">
                 Soluções

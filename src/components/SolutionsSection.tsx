@@ -52,7 +52,7 @@ const SolutionsSection = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Monitoramento e Proteção */}
-          <div className="feature-card bg-white p-10 rounded-2xl shadow-card border border-gray-100">
+          <div id="monitoramento" className="feature-card bg-white p-10 rounded-2xl shadow-card border border-gray-100">
             <div className="text-center mb-8">
               <div className="w-20 h-20 gradient-bg rounded-full flex items-center justify-center mx-auto mb-6 shadow-elegant">
                 <Shield className="text-white w-8 h-8" />
