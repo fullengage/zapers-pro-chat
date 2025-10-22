@@ -1,128 +1,73 @@
-import { Button } from "@/components/ui/button";
-import { Building, ShoppingBag, Zap, Star } from "lucide-react";
+import { Star, Quote } from "lucide-react";
 
 const TestimonialsSection = () => {
   const testimonials = [
     {
-      icon: Building,
       company: "Paschoalotto",
       industry: "Escritório de Advocacia",
-      testimonial: "O ZapCode revolucionou nossa comunicação interna. Conseguimos monitorar todas as interações e manter nosso sigilo profissional com total segurança.",
-      bgColor: "bg-purple-100",
-      iconColor: "text-purple-600"
+      testimonial: "O ZapCode revolucionou nossa comunicação interna. Conseguimos monitorar todas as interações mantendo total segurança e sigilo profissional.",
+      author: "Carlos Silva",
+      role: "Diretor de TI"
     },
     {
-      icon: ShoppingBag,
       company: "MilkyMoo",
       industry: "Indústria Alimentícia",
-      testimonial: "A capacidade de armazenar e visualizar mensagens e arquivos com facilidade transformou nossa produtividade. Recomendo para qualquer empresa!",
-      bgColor: "bg-indigo-100",
-      iconColor: "text-indigo-600"
+      testimonial: "A organização e facilidade de acesso às conversas transformou nossa produtividade. Recomendo para qualquer empresa que leva comunicação a sério.",
+      author: "Ana Santos",
+      role: "Gerente de Operações"
     },
     {
-      icon: Zap,
       company: "Maxy Dist. Solar",
       industry: "Distribuidora de Energia",
-      testimonial: "Com o ZapCode, conseguimos monitorar e proteger as comunicações da nossa equipe de vendas. O resultado foi um aumento de 40% na eficiência.",
-      bgColor: "bg-purple-100",
-      iconColor: "text-purple-600"
+      testimonial: "Com o ZapCode, nossa equipe de vendas aumentou 40% em eficiência. O controle e monitoramento são essenciais para nosso sucesso.",
+      author: "Roberto Mendes",
+      role: "Gerente Comercial"
     }
   ];
 
-  const StarRating = () => (
-    <div className="flex justify-center space-x-1">
-      {[...Array(5)].map((_, i) => (
-        <Star key={i} className="text-yellow-400 w-5 h-5 fill-current" />
-      ))}
-    </div>
-  );
-
   return (
-    <section id="depoimentos" className="py-20 bg-gray-900 text-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-black mb-6">POR QUE ESCOLHER O ZAPCODE?</h2>
-          <p className="text-xl text-gray-300">Benefícios que fazem a diferença na sua empresa</p>
+    <section id="depoimentos" className="py-24 bg-muted">
+      <div className="container mx-auto px-6">
+        {/* Header */}
+        <div className="text-center mb-16 max-w-3xl mx-auto">
+          <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
+            Empresas que confiam no ZapCode
+          </h2>
+          <p className="text-xl text-muted-foreground">
+            Veja o que nossos clientes têm a dizer sobre a transformação em suas operações
+          </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          <div className="testimonial-card text-gray-800 p-8 rounded-2xl shadow-card">
-            <div className="p-6 mb-6">
-              <div className="flex items-center mb-4">
-                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mr-4">
-                  <Building className="text-purple-600 w-8 h-8" />
-                </div>
-                <div>
-                  <h4 className="font-black text-xl">Segurança Corporativa</h4>
-                  <p className="text-gray-600">Proteção de dados empresariais</p>
-                </div>
+        {/* Testimonials Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {testimonials.map((testimonial, index) => (
+            <div 
+              key={index} 
+              className="bg-card rounded-2xl p-8 border border-border shadow-card hover:shadow-elegant transition-smooth"
+            >
+              <div className="mb-6">
+                <Quote className="w-10 h-10 text-primary/20" />
               </div>
-              <p className="text-gray-700 italic mb-4">"Proteja as comunicações da sua empresa com criptografia de nível bancário e controle total sobre os dados."</p>
-            </div>
-            <div className="flex justify-center">
-              <div className="flex space-x-1">
-                <Star className="text-yellow-400 w-5 h-5 fill-current" />
-                <Star className="text-yellow-400 w-5 h-5 fill-current" />
-                <Star className="text-yellow-400 w-5 h-5 fill-current" />
-                <Star className="text-yellow-400 w-5 h-5 fill-current" />
-                <Star className="text-yellow-400 w-5 h-5 fill-current" />
+              
+              <p className="text-foreground mb-6 leading-relaxed italic">
+                "{testimonial.testimonial}"
+              </p>
+              
+              <div className="flex gap-1 mb-6">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 fill-primary text-primary" />
+                ))}
               </div>
-            </div>
-          </div>
-          
-          <div className="testimonial-card text-gray-800 p-8 rounded-2xl shadow-card">
-            <div className="p-6 mb-6">
-              <div className="flex items-center mb-4">
-                <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
-                  <ShoppingBag className="text-indigo-600 w-8 h-8" />
-                </div>
-                <div>
-                  <h4 className="font-black text-xl">Organização Total</h4>
-                  <p className="text-gray-600">Gestão eficiente de dados</p>
+              
+              <div className="border-t border-border pt-6">
+                <div className="font-bold text-foreground">{testimonial.author}</div>
+                <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                <div className="text-sm text-primary font-semibold mt-2">
+                  {testimonial.company} • {testimonial.industry}
                 </div>
               </div>
-              <p className="text-gray-700 italic mb-4">"Tenha todas as mensagens e arquivos organizados e acessíveis quando precisar, com busca avançada e categorização."</p>
             </div>
-            <div className="flex justify-center">
-              <div className="flex space-x-1">
-                <Star className="text-yellow-400 w-5 h-5 fill-current" />
-                <Star className="text-yellow-400 w-5 h-5 fill-current" />
-                <Star className="text-yellow-400 w-5 h-5 fill-current" />
-                <Star className="text-yellow-400 w-5 h-5 fill-current" />
-                <Star className="text-yellow-400 w-5 h-5 fill-current" />
-              </div>
-            </div>
-          </div>
-          
-          <div className="testimonial-card text-gray-800 p-8 rounded-2xl shadow-card">
-            <div className="p-6 mb-6">
-              <div className="flex items-center mb-4">
-                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mr-4">
-                  <Zap className="text-purple-600 w-8 h-8" />
-                </div>
-                <div>
-                  <h4 className="font-black text-xl">Produtividade</h4>
-                  <p className="text-gray-600">Aumento da eficiência</p>
-                </div>
-              </div>
-              <p className="text-gray-700 italic mb-4">"Monitore e acompanhe o desempenho da equipe com relatórios detalhados e insights que impulsionam resultados."</p>
-            </div>
-            <div className="flex justify-center">
-              <div className="flex space-x-1">
-                <Star className="text-yellow-400 w-5 h-5 fill-current" />
-                <Star className="text-yellow-400 w-5 h-5 fill-current" />
-                <Star className="text-yellow-400 w-5 h-5 fill-current" />
-                <Star className="text-yellow-400 w-5 h-5 fill-current" />
-                <Star className="text-yellow-400 w-5 h-5 fill-current" />
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div className="text-center">
-          <Button variant="hero" size="xl">
-            🚀 COMEÇAR AGORA
-          </Button>
+          ))}
         </div>
       </div>
     </section>
