@@ -13,45 +13,33 @@ const Header = () => {
 
   return (
     <>
-      {/* Announcement Bar */}
-      <div className="bg-primary text-primary-foreground text-center py-2 px-4 relative overflow-hidden">
-        <div className="flex items-center justify-center space-x-2">
-          <span className="urgency-badge">⚡</span>
-          <span className="font-bold text-sm md:text-base">
-            🚀 OFERTA LIMITADA: 30% OFF no primeiro mês + Setup GRATUITO!
-          </span>
-          <span className="urgency-badge">⚡</span>
-        </div>
-      </div>
-
-      {/* Main Header */}
-      <header className="sticky top-0 z-50 bg-background shadow-card border-b">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+      {/* Main Header - Clean & Professional */}
+      <header className="sticky top-0 z-50 bg-card shadow-sm border-b">
+        <div className="container mx-auto px-6 py-4 flex justify-between items-center">
           <div className="flex items-center">
-            <img src={logo} alt="Zapcode Logo" className="h-24 w-auto" />
-            <span className="text-2xl font-black text-foreground"></span>
+            <img src={logo} alt="ZapCode Logo" className="h-16 w-auto" />
           </div>
           
-          <nav className="hidden md:flex space-x-8">
-            <a href="/" className="font-semibold hover:text-primary transition-smooth">
+          <nav className="hidden lg:flex space-x-8 items-center">
+            <a href="/" className="text-foreground hover:text-primary transition-smooth text-sm font-medium">
               Início
             </a>
-            <a href="#monitoramento" className="font-semibold hover:text-primary transition-smooth">
-              Monitoramento
-            </a>
-            <a href="#solucoes" className="font-semibold hover:text-primary transition-smooth">
+            <a href="#solucoes" className="text-foreground hover:text-primary transition-smooth text-sm font-medium">
               Soluções
             </a>
-            <a href="#precos" className="font-semibold hover:text-primary transition-smooth">
-              Preços
-            </a>
+            <Link to="/blog" className="text-foreground hover:text-primary transition-smooth text-sm font-medium">
+              Blog
+            </Link>
+            <Link to="/quem-somos" className="text-foreground hover:text-primary transition-smooth text-sm font-medium">
+              Quem somos
+            </Link>
           </nav>
           
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden lg:flex items-center space-x-3">
             {user ? (
               <>
                 <Link to="/dashboard">
-                  <Button variant="outline" size="sm" className="gap-2">
+                  <Button variant="ghost" size="sm" className="gap-2">
                     <User className="h-4 w-4" />
                     Dashboard
                   </Button>
@@ -63,14 +51,14 @@ const Header = () => {
               </>
             ) : (
               <>
+                <Button variant="default" size="lg" className="rounded-full px-8 font-semibold">
+                  Agende uma demonstração
+                </Button>
                 <Link to="/auth">
-                  <Button variant="outline" size="lg">
-                    Login
+                  <Button variant="outline" size="lg" className="rounded-full px-8 font-semibold">
+                    Entrar
                   </Button>
                 </Link>
-                <Button variant="hero" size="lg">
-                  DEMONSTRAÇÃO GRÁTIS
-                </Button>
               </>
             )}
           </div>

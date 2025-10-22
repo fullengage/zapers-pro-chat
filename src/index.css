@@ -8,28 +8,28 @@ All colors MUST be HSL for consistency
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 0 0% 98%;
+    --foreground: 240 10% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 240 10% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 240 10% 15%;
 
-    /* Purple primary theme for ZapCode */
-    --primary: 270 91% 37%;
+    /* Teal/Green primary theme inspired by reference */
+    --primary: 170 76% 42%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 270 100% 50%;
+    --primary-glow: 170 76% 52%;
 
-    --secondary: 270 20% 96%;
-    --secondary-foreground: 270 91% 37%;
+    --secondary: 210 16% 93%;
+    --secondary-foreground: 170 76% 42%;
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 8% 46%;
+    --muted: 210 16% 93%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 270 100% 95%;
-    --accent-foreground: 270 91% 37%;
+    --accent: 170 76% 97%;
+    --accent-foreground: 170 76% 42%;
 
     --success: 142 71% 45%;
     --success-foreground: 0 0% 100%;
@@ -37,24 +37,24 @@ All colors MUST be HSL for consistency
     --warning: 45 93% 47%;
     --warning-foreground: 0 0% 100%;
 
-    --stats-highlight: 252 87% 85%;
+    --stats-highlight: 170 76% 92%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 270 91% 37%;
+    --ring: 170 76% 42%;
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(270 91% 37%), hsl(259 100% 45%));
-    --gradient-hero: linear-gradient(135deg, hsl(270 91% 37%) 0%, hsl(259 100% 45%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(270 100% 95%) 0%, hsl(259 100% 98%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(170 76% 42%), hsl(170 76% 52%));
+    --gradient-hero: linear-gradient(135deg, hsl(170 76% 42%) 0%, hsl(170 76% 52%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(170 76% 97%) 0%, hsl(0 0% 100%) 100%);
 
     /* Shadows */
-    --shadow-elegant: 0 10px 30px -10px hsl(270 91% 37% / 0.3);
-    --shadow-glow: 0 0 40px hsl(270 100% 50% / 0.4);
-    --shadow-card: 0 4px 6px -1px hsl(220 13% 91% / 0.1), 0 2px 4px -1px hsl(220 13% 91% / 0.06);
+    --shadow-elegant: 0 10px 30px -10px hsl(170 76% 42% / 0.2);
+    --shadow-glow: 0 0 40px hsl(170 76% 52% / 0.3);
+    --shadow-card: 0 4px 20px -4px hsl(220 13% 80% / 0.15);
 
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
