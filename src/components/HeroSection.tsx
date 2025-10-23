@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { FileText, ShoppingCart } from "lucide-react";
 import heroProfessional from "@/assets/carousel-1.png";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
@@ -21,8 +22,8 @@ const HeroSection = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="rounded-full px-8 font-semibold text-base">
-                Fale com um especialista
+              <Button size="lg" className="rounded-full px-8 font-semibold text-base" asChild>
+                <Link to="/formulario">Fale com um especialista</Link>
               </Button>
               <Dialog>
                 <DialogTrigger asChild>
