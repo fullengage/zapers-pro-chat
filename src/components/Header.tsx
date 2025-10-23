@@ -22,16 +22,19 @@ const Header = () => {
           
           <nav className="hidden lg:flex space-x-8 items-center">
             <a href="/" className="text-foreground hover:text-primary transition-smooth text-sm font-medium">
-              Início
+              Home
             </a>
             <a href="#solucoes" className="text-foreground hover:text-primary transition-smooth text-sm font-medium">
               Soluções
             </a>
+            <Link to="/quem-somos" className="text-foreground hover:text-primary transition-smooth text-sm font-medium">
+              Quem somos
+            </Link>
             <Link to="/blog" className="text-foreground hover:text-primary transition-smooth text-sm font-medium">
               Blog
             </Link>
-            <Link to="/quem-somos" className="text-foreground hover:text-primary transition-smooth text-sm font-medium">
-              Quem somos
+            <Link to="/formulario" className="text-foreground hover:text-primary transition-smooth text-sm font-medium">
+              Contato
             </Link>
           </nav>
           
@@ -87,6 +90,9 @@ const Header = () => {
               <a href="#precos" className="font-semibold hover:text-primary transition-smooth">
                 Preços
               </a>
+              <Link to="/formulario" className="font-semibold hover:text-primary transition-smooth">
+                Formulário
+              </Link>
               {user ? (
                 <>
                   <Link to="/dashboard">
