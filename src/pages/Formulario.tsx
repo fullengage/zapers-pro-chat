@@ -6,7 +6,7 @@ const Formulario = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="pt-28">
+      <main className="pt-20">
         <WebhookForm />
       </main>
       <Footer />
