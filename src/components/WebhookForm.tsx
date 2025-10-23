@@ -5,6 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { z } from "zod";
 import { toast } from "sonner";
+import { Mail, Building2, User, Phone, CheckCircle2 } from "lucide-react";
 
 const WEBHOOK_URL = "https://autowebhook.chathook.com.br/webhook/9744f9d4-7b89-487d-bd5a-7358ebc3c27a";
 
@@ -98,123 +99,185 @@ export default function WebhookForm() {
   }
 
   return (
-    <section className="w-full bg-gradient-to-b from-primary/10 to-transparent py-12">
-      <div className="container mx-auto px-4 max-w-5xl">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-          <div className="hidden lg:block">
-            <div className="rounded-2xl bg-primary text-primary-foreground p-8 shadow-xl">
-              <h2 className="text-3xl font-extrabold tracking-tight mb-4">Solicite uma demonstração</h2>
-              <p className="text-primary-foreground/90 text-base leading-relaxed">
-                Conecte equipes, organize conversas e transforme informações em resultados. Com a ZapCode, tudo fica salvo na nuvem, com inteligência e segurança para o crescimento do seu negócio. Monitore várias contas de WhatsApp em um só lugar. 
-                <br />
-                Informe seus dados e aguarde nosso contato. Respondemos rápido pelo WhatsApp e e-mail.
+    <section className="w-full min-h-[calc(100vh-8rem)] bg-gradient-to-br from-primary/5 via-background to-primary/5 py-16 md:py-24">
+      <div className="container mx-auto px-4 max-w-7xl">
+        {/* Hero Section */}
+        <div className="text-center mb-12 md:mb-16">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/60">
+            Solicite uma Demonstração
+          </h1>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+            Descubra como a ZapCode pode transformar a gestão do WhatsApp da sua empresa
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+          {/* Info Card */}
+          <div className="order-2 lg:order-1">
+            <Card className="rounded-3xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground p-8 md:p-10 shadow-2xl border-0">
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">
+                Por que escolher a ZapCode?
+              </h2>
+              <p className="text-primary-foreground/95 text-base md:text-lg leading-relaxed mb-8">
+                Conecte equipes, organize conversas e transforme informações em resultados. Com a ZapCode, tudo fica salvo na nuvem, com inteligência e segurança para o crescimento do seu negócio.
               </p>
-              <ul className="mt-6 space-y-3 text-primary-foreground/90 text-sm">
-                <li className="flex items-center gap-2">
-                  <span className="inline-block h-2 w-2 rounded-full bg-primary-foreground" /> Atendimento ágil e personalizado
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="inline-block h-2 w-2 rounded-full bg-primary-foreground" /> Sem compromisso
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="inline-block h-2 w-2 rounded-full bg-primary-foreground" /> Seus dados estão seguros
-                </li>
-              </ul>
-            </div>
+              
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-6 h-6 shrink-0 mt-0.5" />
+                  <div>
+                    <h3 className="font-semibold text-lg mb-1">Atendimento Ágil</h3>
+                    <p className="text-primary-foreground/90 text-sm">Resposta rápida por WhatsApp e e-mail em horário comercial</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-6 h-6 shrink-0 mt-0.5" />
+                  <div>
+                    <h3 className="font-semibold text-lg mb-1">Sem Compromisso</h3>
+                    <p className="text-primary-foreground/90 text-sm">Conheça a plataforma sem obrigações ou contratos longos</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-6 h-6 shrink-0 mt-0.5" />
+                  <div>
+                    <h3 className="font-semibold text-lg mb-1">Dados Seguros</h3>
+                    <p className="text-primary-foreground/90 text-sm">Proteção total das suas informações com criptografia avançada</p>
+                  </div>
+                </div>
+              </div>
+            </Card>
           </div>
 
-          <Card className="p-6 md:p-8 rounded-2xl shadow-elegant border bg-background/70 backdrop-blur">
-            <div className="mb-6">
-              <h3 className="text-xl md:text-2xl font-bold">Informe seus dados</h3>
-              <p className="text-muted-foreground text-sm mt-1">
-                Responderemos em poucos minutos em horário comercial.
+          {/* Form Card */}
+          <Card className="order-1 lg:order-2 p-8 md:p-10 rounded-3xl shadow-2xl border-2 bg-card backdrop-blur">
+            <div className="mb-8">
+              <h3 className="text-2xl md:text-3xl font-bold mb-2">Informe seus dados</h3>
+              <p className="text-muted-foreground">
+                Preencha o formulário e entraremos em contato rapidamente
               </p>
             </div>
 
-            <form onSubmit={onSubmit} className="space-y-5">
-              <div className="grid grid-cols-1 gap-4">
+            <form onSubmit={onSubmit} className="space-y-6">
+              <div className="space-y-5">
                 <div className="space-y-2">
-                  <Label htmlFor="name">Name <span className="text-red-500">*</span></Label>
-                  <Input
-                    id="name"
-                    type="text"
-                    value={name}
-                    onChange={(e) => {
-                      setName(e.target.value);
-                      if (errors.name) setErrors(prev => ({ ...prev, name: "" }));
-                    }}
-                    required
-                    placeholder="e.g. José Alves"
-                    className={errors.name ? "border-red-500" : ""}
-                  />
-                  {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
+                  <Label htmlFor="name" className="text-base font-semibold">
+                    Nome Completo <span className="text-destructive">*</span>
+                  </Label>
+                  <div className="relative">
+                    <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                    <Input
+                      id="name"
+                      type="text"
+                      value={name}
+                      onChange={(e) => {
+                        setName(e.target.value);
+                        if (errors.name) setErrors(prev => ({ ...prev, name: "" }));
+                      }}
+                      required
+                      placeholder="José Alves Silva"
+                      className={`pl-11 h-12 ${errors.name ? "border-destructive" : ""}`}
+                    />
+                  </div>
+                  {errors.name && <p className="text-destructive text-sm">{errors.name}</p>}
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="email">Email <span className="text-red-500">*</span></Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    value={email}
-                    onChange={(e) => {
-                      setEmail(e.target.value);
-                      if (errors.email) setErrors(prev => ({ ...prev, email: "" }));
-                    }}
-                    required
-                    placeholder="e.g. jose@empresa.com"
-                    className={errors.email ? "border-red-500" : ""}
-                  />
-                  {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
+                  <Label htmlFor="email" className="text-base font-semibold">
+                    E-mail Corporativo <span className="text-destructive">*</span>
+                  </Label>
+                  <div className="relative">
+                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                    <Input
+                      id="email"
+                      type="email"
+                      value={email}
+                      onChange={(e) => {
+                        setEmail(e.target.value);
+                        if (errors.email) setErrors(prev => ({ ...prev, email: "" }));
+                      }}
+                      required
+                      placeholder="jose@suaempresa.com.br"
+                      className={`pl-11 h-12 ${errors.email ? "border-destructive" : ""}`}
+                    />
+                  </div>
+                  {errors.email && <p className="text-destructive text-sm">{errors.email}</p>}
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="company">NomeEmpresa <span className="text-red-500">*</span></Label>
-                  <Input
-                    id="company"
-                    type="text"
-                    value={company}
-                    onChange={(e) => {
-                      setCompany(e.target.value);
-                      if (errors.company) setErrors(prev => ({ ...prev, company: "" }));
-                    }}
-                    required
-                    placeholder="e.g. ZapCode"
-                    className={errors.company ? "border-red-500" : ""}
-                  />
-                  {errors.company && <p className="text-red-500 text-xs mt-1">{errors.company}</p>}
+                  <Label htmlFor="company" className="text-base font-semibold">
+                    Nome da Empresa <span className="text-destructive">*</span>
+                  </Label>
+                  <div className="relative">
+                    <Building2 className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                    <Input
+                      id="company"
+                      type="text"
+                      value={company}
+                      onChange={(e) => {
+                        setCompany(e.target.value);
+                        if (errors.company) setErrors(prev => ({ ...prev, company: "" }));
+                      }}
+                      required
+                      placeholder="Sua Empresa Ltda"
+                      className={`pl-11 h-12 ${errors.company ? "border-destructive" : ""}`}
+                    />
+                  </div>
+                  {errors.company && <p className="text-destructive text-sm">{errors.company}</p>}
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="whatsapp">WhatsApp <span className="text-red-500">*</span></Label>
-                  <Input
-                    id="whatsapp"
-                    type="tel"
-                    value={whatsapp}
-                    onChange={handleWhatsAppChange}
-                    required
-                    placeholder="(11) 99999-9999"
-                    maxLength={15}
-                    className={errors.whatsapp ? "border-red-500" : ""}
-                  />
-                  {errors.whatsapp && <p className="text-red-500 text-xs mt-1">{errors.whatsapp}</p>}
-                  <p className="text-xs text-muted-foreground">Informe o DDD + número</p>
+                  <Label htmlFor="whatsapp" className="text-base font-semibold">
+                    WhatsApp <span className="text-destructive">*</span>
+                  </Label>
+                  <div className="relative">
+                    <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                    <Input
+                      id="whatsapp"
+                      type="tel"
+                      value={whatsapp}
+                      onChange={handleWhatsAppChange}
+                      required
+                      placeholder="(11) 99999-9999"
+                      maxLength={15}
+                      className={`pl-11 h-12 ${errors.whatsapp ? "border-destructive" : ""}`}
+                    />
+                  </div>
+                  {errors.whatsapp && <p className="text-destructive text-sm">{errors.whatsapp}</p>}
+                  <p className="text-xs text-muted-foreground">Informe o DDD + número com 9 dígitos</p>
                 </div>
               </div>
 
-              <div className="flex flex-col md:flex-row md:items-center gap-3 pt-2">
-                <Button type="submit" disabled={loading} className="w-full md:w-auto px-6">
-                  {loading ? "Enviando..." : "Quero ser contatado"}
+              <div className="pt-4">
+                <Button 
+                  type="submit" 
+                  disabled={loading} 
+                  className="w-full h-12 text-lg font-semibold"
+                  size="lg"
+                >
+                  {loading ? "Enviando..." : "Solicitar Demonstração"}
                 </Button>
+                
                 {status === "success" && (
-                  <span className="text-green-600 text-sm">Enviado com sucesso. Obrigado!</span>
+                  <div className="mt-4 p-4 bg-green-50 dark:bg-green-950 border border-green-200 dark:border-green-800 rounded-lg">
+                    <p className="text-green-800 dark:text-green-200 text-sm font-medium">
+                      ✓ Enviado com sucesso! Entraremos em contato em breve.
+                    </p>
+                  </div>
                 )}
+                
                 {status === "error" && (
-                  <span className="text-red-600 text-sm">Falha ao enviar. Tente novamente.</span>
+                  <div className="mt-4 p-4 bg-red-50 dark:bg-red-950 border border-red-200 dark:border-red-800 rounded-lg">
+                    <p className="text-red-800 dark:text-red-200 text-sm font-medium">
+                      ✗ Falha ao enviar. Por favor, tente novamente.
+                    </p>
+                  </div>
                 )}
               </div>
 
-              <p className="text-[11px] text-muted-foreground mt-1">
-                Ao enviar, você concorda em receber contato sobre nossos produtos e serviços.
+              <p className="text-xs text-muted-foreground text-center pt-2">
+                Ao enviar este formulário, você concorda em receber comunicações sobre nossos produtos e serviços. Seus dados estão protegidos conforme nossa política de privacidade.
               </p>
             </form>
           </Card>
