@@ -54,8 +54,8 @@ const Header = () => {
               </>
             ) : (
               <>
-                <Button variant="default" size="lg" className="rounded-full px-8 font-semibold">
-                  Agende uma demonstração
+                <Button variant="default" size="lg" className="rounded-full px-8 font-semibold" asChild>
+                  <Link to="/formulario">Agende uma demonstração</Link>
                 </Button>
                 <Link to="/auth">
                   <Button variant="outline" size="lg" className="rounded-full px-8 font-semibold">
