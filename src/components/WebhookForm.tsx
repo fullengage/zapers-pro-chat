@@ -3,33 +3,95 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
+import { z } from "zod";
+import { toast } from "sonner";
 
 const WEBHOOK_URL = "https://autowebhook.chathook.com.br/webhook/9744f9d4-7b89-487d-bd5a-7358ebc3c27a";
+
+// Validation schema
+const formSchema = z.object({
+  name: z.string().trim().min(1, "Nome é obrigatório").max(100, "Nome muito longo"),
+  email: z.string().trim().email("Email inválido").max(255, "Email muito longo"),
+  company: z.string().trim().min(1, "Nome da empresa é obrigatório").max(100, "Nome muito longo"),
+  whatsapp: z.string()
+    .trim()
+    .min(1, "WhatsApp é obrigatório")
+    .regex(/^\(?([1-9]{2})\)?[-.\s]?([9]{1})?(\d{4})[-.\s]?(\d{4})$/, 
+      "Formato inválido. Use (DDD) + número. Ex: (11) 99999-9999")
+    .transform(val => val.replace(/\D/g, ''))
+});
 
 export default function WebhookForm() {
   const [name, setName] = useState("");
   const [company, setCompany] = useState("");
   const [email, setEmail] = useState("");
+  const [whatsapp, setWhatsapp] = useState("");
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<string | null>(null);
+  const [errors, setErrors] = useState<Record<string, string>>({});
+
+  // Format WhatsApp as user types
+  const formatWhatsApp = (value: string) => {
+    const numbers = value.replace(/\D/g, '').slice(0, 11);
+    if (numbers.length <= 2) return numbers;
+    if (numbers.length <= 7) return `(${numbers.slice(0, 2)}) ${numbers.slice(2)}`;
+    if (numbers.length <= 11) {
+      return `(${numbers.slice(0, 2)}) ${numbers.slice(2, 7)}-${numbers.slice(7)}`;
+    }
+    return value;
+  };
+
+  const handleWhatsAppChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const formatted = formatWhatsApp(e.target.value);
+    setWhatsapp(formatted);
+    // Clear error when user types
+    if (errors.whatsapp) {
+      setErrors(prev => ({ ...prev, whatsapp: "" }));
+    }
+  };
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus(null);
+    setErrors({});
+    
+    // Validate form data
+    const validation = formSchema.safeParse({ name, email, company, whatsapp });
+    
+    if (!validation.success) {
+      const fieldErrors: Record<string, string> = {};
+      validation.error.issues.forEach(err => {
+        if (err.path[0]) {
+          fieldErrors[err.path[0].toString()] = err.message;
+        }
+      });
+      setErrors(fieldErrors);
+      toast.error("Por favor, corrija os erros no formulário");
+      return;
+    }
+
     setLoading(true);
     try {
       const res = await fetch(WEBHOOK_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ Name: name, NomeEmpresa: company, email }),
+        body: JSON.stringify({ 
+          Name: validation.data.name, 
+          NomeEmpresa: validation.data.company, 
+          email: validation.data.email,
+          whatsapp: validation.data.whatsapp
+        }),
       });
       if (!res.ok) throw new Error("request_failed");
       setStatus("success");
+      toast.success("Enviado com sucesso! Entraremos em contato em breve.");
       setName("");
       setCompany("");
       setEmail("");
+      setWhatsapp("");
     } catch {
       setStatus("error");
+      toast.error("Falha ao enviar. Tente novamente.");
     } finally {
       setLoading(false);
     }
@@ -77,10 +139,15 @@ export default function WebhookForm() {
                     id="name"
                     type="text"
                     value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    onChange={(e) => {
+                      setName(e.target.value);
+                      if (errors.name) setErrors(prev => ({ ...prev, name: "" }));
+                    }}
                     required
                     placeholder="e.g. José Alves"
+                    className={errors.name ? "border-red-500" : ""}
                   />
+                  {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
                 </div>
 
                 <div className="space-y-2">
@@ -89,10 +156,15 @@ export default function WebhookForm() {
                     id="email"
                     type="email"
                     value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                      if (errors.email) setErrors(prev => ({ ...prev, email: "" }));
+                    }}
                     required
                     placeholder="e.g. jose@empresa.com"
+                    className={errors.email ? "border-red-500" : ""}
                   />
+                  {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
                 </div>
 
                 <div className="space-y-2">
@@ -101,10 +173,31 @@ export default function WebhookForm() {
                     id="company"
                     type="text"
                     value={company}
-                    onChange={(e) => setCompany(e.target.value)}
+                    onChange={(e) => {
+                      setCompany(e.target.value);
+                      if (errors.company) setErrors(prev => ({ ...prev, company: "" }));
+                    }}
                     required
                     placeholder="e.g. ZapCode"
+                    className={errors.company ? "border-red-500" : ""}
                   />
+                  {errors.company && <p className="text-red-500 text-xs mt-1">{errors.company}</p>}
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="whatsapp">WhatsApp <span className="text-red-500">*</span></Label>
+                  <Input
+                    id="whatsapp"
+                    type="tel"
+                    value={whatsapp}
+                    onChange={handleWhatsAppChange}
+                    required
+                    placeholder="(11) 99999-9999"
+                    maxLength={15}
+                    className={errors.whatsapp ? "border-red-500" : ""}
+                  />
+                  {errors.whatsapp && <p className="text-red-500 text-xs mt-1">{errors.whatsapp}</p>}
+                  <p className="text-xs text-muted-foreground">Informe o DDD + número</p>
                 </div>
               </div>
 
