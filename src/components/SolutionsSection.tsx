@@ -1,37 +1,32 @@
 import { Button } from "@/components/ui/button";
-import { MessageSquare, Users, TrendingUp, Shield, Zap, Clock } from "lucide-react";
+import { MessageSquare, Users, TrendingUp, Shield, Zap, Clock, AlertTriangle, BarChart, SlidersHorizontal } from "lucide-react";
 
 const SolutionsSection = () => {
   const features = [
     {
-      icon: MessageSquare,
-      title: "Multi-canal unificado",
-      description: "Gerencie múltiplos números WhatsApp em uma única plataforma integrada"
+      icon: AlertTriangle,
+      title: "Prevenção de Riscos e Compliance",
+      description: "Nossa plataforma permite que sua equipe detecte falhas de conduta, vazamentos de dados e infrações às políticas internas, monitorando as comunicações de forma inteligente e em conformidade com a LGPD."
     },
     {
-      icon: Users,
-      title: "Gestão de equipes",
-      description: "Atribua conversas, defina permissões e acompanhe o desempenho em tempo real"
-    },
-    {
-      icon: TrendingUp,
-      title: "Analytics avançado",
-      description: "Dashboards completos com métricas de desempenho e produtividade"
+      icon: BarChart,
+      title: "Decisões Baseadas em Dados",
+      description: "Acompanhe as interações em tempo real, visualize métricas estratégicas e gere insights para otimizar performance e compliance da sua operação."
     },
     {
       icon: Shield,
-      title: "Segurança empresarial",
-      description: "Criptografia de ponta a ponta e conformidade com LGPD"
+      title: "Segurança e Compliance em Tempo Real",
+      description: "Visualize todas as conversas, receba alertas de mensagens fora do padrão e gerencie regras internas com precisão — garantindo conformidade, segurança e transparência."
     },
     {
-      icon: Zap,
-      title: "Automações inteligentes",
-      description: "Respostas automáticas, chatbots e workflows personalizados"
+      icon: SlidersHorizontal,
+      title: "Regras Personalizadas para Cada Realidade",
+      description: "Configure alertas com base em palavras-chave, temas sensíveis ou riscos específicos do seu setor. Adapte o monitoramento à realidade do seu negócio."
     },
     {
-      icon: Clock,
-      title: "Histórico completo",
-      description: "Busca avançada e acesso ilimitado ao histórico de conversas"
+      icon: Users,
+      title: "Controle Total sobre os Usuários Monitorados",
+      description: "Gerencie facilmente quem está sob monitoria, veja status de conexão, dados de contato, grupos/setores vinculados e gestores responsáveis."
     }
   ];
 
@@ -41,10 +36,10 @@ const SolutionsSection = () => {
         {/* Header */}
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Tudo que você precisa em um só lugar
+            Controle e Segurança para sua Comunicação Corporativa
           </h2>
           <p className="text-xl text-muted-foreground">
-            Recursos completos para transformar o WhatsApp no CRM da sua empresa
+            Ferramentas poderosas para garantir a integridade e a eficiência da sua equipe no WhatsApp.
           </p>
         </div>
         

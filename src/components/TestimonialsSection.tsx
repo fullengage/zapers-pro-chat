@@ -3,28 +3,28 @@ import { Star, Quote } from "lucide-react";
 const TestimonialsSection = () => {
   const testimonials = [
     {
-      company: "Saúde",
-      industry: "Clínicas, Hospitais e Farmácias",
+      company: "atemporalemma",
+      industry: "Fabrica de sapatos",
       testimonial:
-        "Na área da saúde, cada segundo conta. Com o ZapCode, conseguimos automatizar agendamentos, confirmações e lembretes de consultas, reduzindo erros e garantindo um atendimento mais humano e organizado.",
-      author: "Paulo Marcio",
-      role: "Diretor de TI",
+        "Reduzio o volume de suporte e os custos de operação, com o agente de IA que aprende com a central de ajuda, chats e perguntas frequentes para responder a perguntas comunsCom o agente de IA da ZapCode — que aprende automaticamente a partir da nossa base de ajuda, chats e FAQ — conseguimos reduzir significativamente o volume de tickets e os custos operacionais, ao atender de forma ágil e inteligente as perguntas mais comuns.",
+      author: "Emma Marinho",
+      site: "https://atemporalemma.com.br/",
     },
     {
       company: "Unix Pack",
-      industry: "Indústria Alimentícia",
+      industry: "Indústria de embalagens flexíveis",
       testimonial:
         "Hoje, representantes, distribuidores e clientes falam com nossa equipe usando um único número do WhatsApp. O ZapCode centralizou toda a comunicação e nos permite acompanhar cada conversa em tempo real. É gestão e transparência no mesmo canal.",
       author: "José Carlos",
-      role: "Gerente de Operações",
+      site: "https://unixpack.com.br/",
     },
     {
-      company: "KAprinter",
+      company: "Kaprinter",
       industry: "Suprimento para impressoras",
       testimonial:
-        "Com o ZapCode, nossa equipe comercial ficou 40% mais produtiva. O monitoramento das conversas trouxe clareza, segurança e foco total em resultados. É uma ferramenta indispensável para quem trabalha com metas.",
+        "Com o ZapCode, nossa equipe comercial ficou 40% mais produtiva. O monitoramento das conversas trouxe clareza, segurança e foco total em resultados. É uma ferramenta indispensável A plataforma da CareConnect nos conectou rapidamente a um cuidador de confiança, e com o ZapCode conseguimos centralizar os atendimentos, registrar conversas pelo WhatsApp, rastrear históricos e garantir que tudo funcionasse sem ruído.",
       author: "Kleber Oliveira",
-      role: "Gerente Comercial",
+      site: "https://www.careconnect.com.br/",
     },
   ];
 

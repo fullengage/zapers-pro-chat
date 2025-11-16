@@ -1,21 +1,36 @@
-import { Shield, Archive, UserX, Lock, Database, TrendingUp } from "lucide-react";
+import { Shield, Archive, UserX, Lock, Database, TrendingUp, Filter, ClipboardCheck } from "lucide-react";
 
 const ProblemSolutionSection = () => {
   const solutions = [
     {
-      icon: Lock,
-      title: "Proteção de Dados",
-      description: "Criptografia e segurança corporativa de ponta a ponta para todas as suas conversas empresariais"
+      icon: Shield,
+      title: "🇧🇷 Plataforma 100% Brasileira",
+      description: "Dados hospedados e tratados sob a legislação nacional."
     },
     {
-      icon: Database,
-      title: "Armazenamento Inteligente",
-      description: "Organize e encontre mensagens, arquivos e históricos com busca avançada e filtros inteligentes"
+      icon: Lock,
+      title: "LGPD-first + Compliance Operacional",
+      description: "Logs, políticas e relatórios completos de auditoria."
     },
     {
       icon: TrendingUp,
-      title: "Análise em Tempo Real",
-      description: "Dashboards completos com métricas de desempenho, SLA e produtividade da equipe"
+      title: "Analytics Avançado de WhatsApp",
+      description: "KPIs de SLA, tempo de resposta, performance de equipe e funil de conversas."
+    },
+    {
+      icon: UserX,
+      title: "UX WhatsApp-first",
+      description: "Interface rápida, moderna e fluida para operações que vivem no WhatsApp — menos distração, mais produtividade."
+    },
+    {
+      icon: Filter,
+      title: "CRM de Vendas para WhatsApp",
+      description: "Capture leads, organize clientes em um funil de vendas e gerencie perfis para impulsionar suas conversas comerciais."
+    },
+    {
+      icon: ClipboardCheck,
+      title: "Gestão de Equipe e Performance",
+      description: "Crie tarefas, defina metas, avalie o desempenho da equipe e controle permissões de acesso com facilidade."
     }
   ];
 
@@ -26,11 +41,10 @@ const ProblemSolutionSection = () => {
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              Por que escolher o ZapCode?
+              Por que escolher a ZapCode?
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Transforme a comunicação do seu time com uma plataforma completa, 
-              segura e fácil de usar
+              Plataforma 100% Brasileira, LGPD-first, com Analytics Avançado e Governança e Controle para sua operação.
             </p>
           </div>
           

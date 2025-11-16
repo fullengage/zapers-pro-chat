@@ -1,9 +1,12 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { FileText, ShoppingCart } from "lucide-react";
 import heroProfessional from "@/assets/carousel-1.png";
+import { CnpjModal } from "./CnpjModal";
 
 const HeroSection = () => {
+  const [isCnpjModalOpen, setIsCnpjModalOpen] = useState(false);
+
   return (
     <section className="py-20 bg-muted relative overflow-hidden">
       <div className="container mx-auto px-6">
@@ -11,41 +14,22 @@ const HeroSection = () => {
           {/* Left Content */}
           <div className="space-y-8">
             <h1 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-              Inteligência e Segurança
-              <br />
-              <span className="text-foreground">em WhatsApps profissionais</span>
+              Descubra o que sua equipe esconde no WhatsApp — <span className="text-primary">e como controlar isso</span>
             </h1>
 
             <p className="text-xl text-muted-foreground leading-relaxed max-w-xl">
-              Monitoramento inteligente de múltiplas contas de WhatsApp garantindo conformidade e performance.
+              🚀 <strong>Teste seu CNPJ</strong> e receba um diagnóstico exclusivo no WhatsApp. 
+              Veja como nossa <strong>plataforma 100% brasileira</strong> com <strong>LGPD-first</strong> pode transformar sua operação.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="rounded-full px-8 font-semibold text-base">
-                Fale com um especialista
+              <Button 
+                size="lg" 
+                className="rounded-full px-8 font-semibold text-base"
+                onClick={() => setIsCnpjModalOpen(true)}
+              >
+                🚀 Deixe um CNPJ e te surpreendo no WhatsApp
               </Button>
-              <Dialog>
-                <DialogTrigger asChild>
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="rounded-full px-8 font-semibold text-base"
-                  >
-                    ▶️ Veja como funciona
-                  </Button>
-                </DialogTrigger>
-                <DialogContent className="max-w-4xl w-full h-auto p-0 bg-black border-0">
-                  <div className="relative w-full h-0 pb-[56.25%]">
-                    <iframe
-                      src="https://www.youtube.com/embed/RPUPo9hYPLU?autoplay=1"
-                      title="Demonstração ZapCode"
-                      className="absolute inset-0 w-full h-full rounded-lg"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
-                  </div>
-                </DialogContent>
-              </Dialog>
             </div>
           </div>
 
@@ -68,11 +52,10 @@ const HeroSection = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-foreground mb-1">
-                    Quer melhorar o resultado da sua equipe de vendas?
+                    🇧🇷 100% Brasileiro + LGPD-first
                   </h3>
                   <p className="text-sm text-muted-foreground">
-                    Com a Zapcode, você monitora a comunicação dos seus funcionários com os clientes em tempo real.
-                    Dados reais pra decisões inteligentes.
+                    Dados protegidos sob legislação nacional com analytics avançado e governança completa para sua operação.
                   </p>
                 </div>
               </div>
@@ -88,8 +71,11 @@ const HeroSection = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-foreground mb-1">
-                    Você sabe o que os seus vendedores estão falando no WhatsApp?
+                    🎯 Controle Total + Analytics
                   </h3>
+                  <p className="text-sm text-muted-foreground">
+                    Monitore KPIs de SLA, tempo de resposta e performance da equipe em tempo real.
+                  </p>
                 </div>
               </div>
             </div>
@@ -102,11 +88,11 @@ const HeroSection = () => {
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold">
-                    RP
+                    🇧🇷
                   </div>
                   <div>
-                    <h3 className="font-bold text-foreground">Rafael Portela</h3>
-                    <p className="text-xs text-muted-foreground">rafael.portela@zapcode.com.br</p>
+                    <h3 className="font-bold text-foreground">ZapCode Enterprise</h3>
+                    <p className="text-xs text-muted-foreground">Plataforma Brasileira</p>
                   </div>
                 </div>
                 <button className="text-muted-foreground hover:text-foreground">
@@ -118,11 +104,27 @@ const HeroSection = () => {
                 </button>
               </div>
 
-              <p className="text-sm text-muted-foreground mb-3">(17) 99791-5318</p>
+              <div className="grid grid-cols-3 gap-2 mb-3">
+                <div className="text-center">
+                  <div className="text-lg font-bold text-primary">99.9%</div>
+                  <div className="text-xs text-muted-foreground">Uptime</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-lg font-bold text-primary">24/7</div>
+                  <div className="text-xs text-muted-foreground">Suporte</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-lg font-bold text-primary">500+</div>
+                  <div className="text-xs text-muted-foreground">Empresas</div>
+                </div>
+              </div>
 
               <div className="flex gap-2">
+                <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium">
+                  LGPD-first
+                </span>
                 <span className="px-3 py-1 bg-muted rounded-full text-xs font-medium text-foreground">
-                  Fale com o consultor
+                  Cloud Seguro
                 </span>
               </div>
             </div>
@@ -130,25 +132,127 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Trusted Companies Section */}
+      {/* Why Choose ZapCode Section */}
       <div className="container mx-auto px-6 mt-20">
-        <div className="bg-card/50 backdrop-blur-sm rounded-2xl py-8 px-6 border border-border">
-          <p className="text-center text-sm text-muted-foreground font-medium mb-6">
-            Será que o ZapCode funciona para o meu negócio?
-          </p>
-          <p className="text-center text-base text-foreground mb-8 max-w-3xl mx-auto">
-            Sim! O ZapCode foi desenvolvido para qualquer empresa que utiliza o WhatsApp como canal de atendimento
-            ou vendas — desde pequenos negócios até grandes equipes comerciais.
-          </p>
-          <div className="flex flex-wrap justify-center items-center gap-12 opacity-60">
-            <div className="text-2xl font-bold text-foreground">Saúde</div>
-            <div className="text-2xl font-bold text-foreground">Educação</div>
-            <div className="text-2xl font-bold text-foreground">Escritórios</div>
-            <div className="text-2xl font-bold text-foreground">Provedores</div>
-            <div className="text-2xl font-bold text-foreground">Indústrias</div>
+        <div className="bg-card/50 backdrop-blur-sm rounded-2xl py-12 px-6 border border-border">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-foreground mb-4">
+              🚀 Por que escolher a ZapCode?
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Plataforma <strong>100% Brasileira</strong>, <strong>LGPD-first</strong>, com Analytics Avançado e Governança para sua operação.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {/* Feature 1 */}
+            <div className="text-center space-y-4">
+              <div className="w-16 h-16 mx-auto bg-primary/10 rounded-2xl flex items-center justify-center">
+                <span className="text-2xl">🇧🇷</span>
+              </div>
+              <h3 className="text-xl font-bold text-foreground">Plataforma 100% Brasileira</h3>
+              <p className="text-sm text-muted-foreground">
+                Dados hospedados e tratados sob a legislação nacional com total compliance e segurança.
+              </p>
+            </div>
+
+            {/* Feature 2 */}
+            <div className="text-center space-y-4">
+              <div className="w-16 h-16 mx-auto bg-primary/10 rounded-2xl flex items-center justify-center">
+                <span className="text-2xl">🛡️</span>
+              </div>
+              <h3 className="text-xl font-bold text-foreground">LGPD-first + Compliance</h3>
+              <p className="text-sm text-muted-foreground">
+                Logs, políticas e relatórios completos de auditoria para total conformidade legal.
+              </p>
+            </div>
+
+            {/* Feature 3 */}
+            <div className="text-center space-y-4">
+              <div className="w-16 h-16 mx-auto bg-primary/10 rounded-2xl flex items-center justify-center">
+                <span className="text-2xl">📊</span>
+              </div>
+              <h3 className="text-xl font-bold text-foreground">Analytics Avançado</h3>
+              <p className="text-sm text-muted-foreground">
+                KPIs de SLA, tempo de resposta, performance de equipe e funil de conversas em tempo real.
+              </p>
+            </div>
+
+            {/* Feature 4 */}
+            <div className="text-center space-y-4">
+              <div className="w-16 h-16 mx-auto bg-primary/10 rounded-2xl flex items-center justify-center">
+                <span className="text-2xl">⚡</span>
+              </div>
+              <h3 className="text-xl font-bold text-foreground">UX WhatsApp-first</h3>
+              <p className="text-sm text-muted-foreground">
+                Interface rápida, moderna e fluida para operações que vivem no WhatsApp.
+              </p>
+            </div>
+
+            {/* Feature 5 */}
+            <div className="text-center space-y-4">
+              <div className="w-16 h-16 mx-auto bg-primary/10 rounded-2xl flex items-center justify-center">
+                <span className="text-2xl">🎯</span>
+              </div>
+              <h3 className="text-xl font-bold text-foreground">CRM de Vendas</h3>
+              <p className="text-sm text-muted-foreground">
+                Capture leads, organize clientes em funil e gerencie perfis para impulsionar vendas.
+              </p>
+            </div>
+
+            {/* Feature 6 */}
+            <div className="text-center space-y-4">
+              <div className="w-16 h-16 mx-auto bg-primary/10 rounded-2xl flex items-center justify-center">
+                <span className="text-2xl">👥</span>
+              </div>
+              <h3 className="text-xl font-bold text-foreground">Gestão de Equipe</h3>
+              <p className="text-sm text-muted-foreground">
+                Crie tarefas, defina metas, avalie performance e controle permissões com facilidade.
+              </p>
+            </div>
+          </div>
+
+          {/* Stats Row */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 py-8 border-t border-border">
+            <div className="text-center">
+              <div className="text-3xl font-bold text-primary mb-2">99.9%</div>
+              <div className="text-sm text-muted-foreground">Uptime Garantido</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-primary mb-2">24/7</div>
+              <div className="text-sm text-muted-foreground">Suporte Dedicado</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-primary mb-2">500+</div>
+              <div className="text-sm text-muted-foreground">Empresas Ativas</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-primary mb-2">100%</div>
+              <div className="text-sm text-muted-foreground">Cloud Seguro</div>
+            </div>
+          </div>
+
+          {/* CTA Section */}
+          <div className="text-center mt-8">
+            <p className="text-lg font-medium text-foreground mb-4">
+              🎯 <strong>Pronto para descobrir o que sua equipe esconde?</strong>
+            </p>
+            <Button 
+              size="lg"
+              onClick={() => setIsCnpjModalOpen(true)}
+              className="rounded-full px-8 font-semibold"
+            >
+              🚀 Testar diagnóstico gratuito agora
+            </Button>
           </div>
         </div>
       </div>
+
+      {/* CNPJ Modal */}
+      <CnpjModal 
+        isOpen={isCnpjModalOpen} 
+        onClose={() => setIsCnpjModalOpen(false)} 
+      />
     </section>
   );
 };

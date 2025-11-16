@@ -71,6 +71,48 @@ export type Database = {
         }
         Relationships: []
       }
+      leads_cnpj: {
+        Row: {
+          id: string
+          cnpj: string
+          empresa: string
+          cnae: string | null
+          nome: string
+          whatsapp: string
+          data: string
+          origem: string
+          status: string
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          cnpj: string
+          empresa: string
+          cnae?: string | null
+          nome: string
+          whatsapp: string
+          data?: string
+          origem?: string
+          status?: string
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          cnpj?: string
+          empresa?: string
+          cnae?: string | null
+          nome?: string
+          whatsapp?: string
+          data?: string
+          origem?: string
+          status?: string
+          created_at?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

@@ -22,19 +22,19 @@ const Header = () => {
           
           <nav className="hidden lg:flex space-x-8 items-center">
             <a href="/" className="text-foreground hover:text-primary transition-smooth text-sm font-medium">
-              Início
+              Home
             </a>
             <a href="#solucoes" className="text-foreground hover:text-primary transition-smooth text-sm font-medium">
               Soluções
             </a>
-            <Link to="/blog" className="text-foreground hover:text-primary transition-smooth text-sm font-medium">
-              Blog
-            </Link>
             <Link to="/quem-somos" className="text-foreground hover:text-primary transition-smooth text-sm font-medium">
               Quem somos
             </Link>
+            <Link to="/blog" className="text-foreground hover:text-primary transition-smooth text-sm font-medium">
+              Blog
+            </Link>
             <Link to="/formulario" className="text-foreground hover:text-primary transition-smooth text-sm font-medium">
-              Formulário
+              Contato
             </Link>
           </nav>
           
@@ -54,9 +54,11 @@ const Header = () => {
               </>
             ) : (
               <>
-                <Button variant="default" size="lg" className="rounded-full px-8 font-semibold">
-                  Agende uma demonstração
-                </Button>
+                <Link to="/formulario">
+                  <Button variant="default" size="lg" className="rounded-full px-8 font-semibold">
+                    Agende uma demonstração
+                  </Button>
+                </Link>
                 <Link to="/auth">
                   <Button variant="outline" size="lg" className="rounded-full px-8 font-semibold">
                     Entrar
@@ -113,9 +115,11 @@ const Header = () => {
                       Login
                     </Button>
                   </Link>
-                  <Button variant="hero" size="lg" className="w-full">
-                    DEMONSTRAÇÃO GRÁTIS
-                  </Button>
+                  <Link to="/formulario">
+                    <Button variant="hero" size="lg" className="w-full">
+                      DEMONSTRAÇÃO GRÁTIS
+                    </Button>
+                  </Link>
                 </>
               )}
             </nav>
