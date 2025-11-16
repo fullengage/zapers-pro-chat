@@ -121,16 +121,14 @@ export const CnpjModal = ({ isOpen, onClose }: CnpjModalProps) => {
       // Criar mensagem personalizada
       const mensagemPersonalizada = `Olá, sou o ${nome.trim()} e meu WhatsApp é ${whatsapp}. Recebi o diagnóstico do CNPJ ${cnpj} da empresa ${companyData?.razao_social}.`;
       
-      // Preparar payload para webhook n8n
-      const webhookPayload = {
-        cnpj: cnpj.replace(/\D/g, ""),
-        empresa: companyData?.razao_social,
-        cnae: companyData?.cnae_fiscal_descricao,
-        nome: nome.trim(),
-        whatsapp: cleanWhatsapp,
-        mensagem: mensagemPersonalizada,
-        origem: "hero_cnpj_modal"
-      };
+      // Preparar payload para webhook no formato requerido
+      const webhookPayload = [
+        {
+          phone: cleanWhatsapp,
+          Name: nome.trim(),
+          Message: mensagemPersonalizada
+        }
+      ];
 
       console.log("Payload para webhook n8n:", webhookPayload);
       
